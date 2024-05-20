@@ -48,7 +48,7 @@ main .carrusel .mostrador .elemento {
   display: block;
   border-radius: 1vh;
   margin: 2.5vh 2.5vw;
-  background-image: url(./imagenes/logo.png);
+  background-image: url(../imagenes/logo.png);
   background-size: cover;
   background-position: center;
   transition: all 1s ease-in-out;
