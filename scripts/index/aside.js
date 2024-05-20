@@ -32,7 +32,7 @@ categorias.forEach( ( categoria, i ) => {
 
         //  asignar clase activo a la categoria y mostrar imagen de fondo
         categorias[i].classList.add( 'activo' )
-        categorias[i].style.backgroundImage = `url(../imagenes/categorias/${categorias[i].textContent}.png)`
+        categorias[i].style.backgroundImage = `url(./imagenes/categorias/${categorias[i].textContent}.png)`
         categorias[i].style.color = 'transparent'
     })
 
