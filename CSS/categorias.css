@@ -1,0 +1,147 @@
+@import url(./reset.css);
+
+main .titulo {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+main .vidriera {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+main .vidriera .juego {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 200px;
+  height: 200px;
+  margin: 1%;
+  background-color: var(--color-secundario);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+
+main .vidriera .juego .info {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-end;
+  justify-content: space-evenly;
+  gap: 1em;
+  width: 100%;
+  height: calc( 100% + 6em );
+  padding: 1vh;
+  color: var(--color-primario);
+  background: linear-gradient(
+    to top,
+    var(--color-secundario) 25%,
+    transparent 50%
+  );
+  transition:all 1s ease-in-out .15s;
+}
+
+/* @media (prefers-color-scheme: dark) {
+    main .vidriera .juego .info {
+        color: var(--color-primario);
+  }
+} */
+
+main .vidriera .juego .info .nombre {
+  text-align: center;
+  font-size: 1.15em;
+  width: 100%;
+}
+
+main .vidriera .juego .info .precio {
+  text-align: center;
+  font-size: 1em;
+  padding: 0.5vh;
+}
+
+main .vidriera .juego .info .boton {
+  width: 4em;
+  padding: 0.5vh;
+  border-radius: 1vh;
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+main .vidriera .juego:hover {
+  transform: scale(1.1);
+  background-color: var(--color-primario);
+}
+
+main .vidriera .juego .info:hover{
+    height: 100%;
+    gap: 0;
+    background: linear-gradient(
+      to top,
+      var(--color-secundario) 35%,
+      transparent 50%
+    );
+}
+
+main .vidriera .juego .info .boton:hover {
+  scale: 1.1;
+  background-color: var(--color-selector);
+  color: var(--color-primario);
+}
+
+@media only screen and (max-width: 600px) {
+
+  main .vidriera .juego {
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+  }
+
+    main .vidriera .juego .info {
+        height: 100%;
+        gap: 0;
+        background: linear-gradient(
+          to top,
+          var(--color-terciario) 35%,
+          transparent 50%
+        );
+    }
+
+    main .vidriera .juego .info .boton {
+      background-color: var(--color-selector);
+      color: var(--color-primario);
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+
+    main .vidriera .juego {
+      height: 200px;
+      width: 200px;
+      background-size: cover;
+    }
+  
+      main .vidriera .juego .info {
+          height: 100%;
+          gap: 0;
+          background: linear-gradient(
+            to top,
+            var(--color-terciario) 35%,
+            transparent 50%
+          );
+      }
+
+      main .vidriera .juego .info .boton {
+        background-color: var(--color-selector);
+        color: var(--color-primario);
+      }
+}
