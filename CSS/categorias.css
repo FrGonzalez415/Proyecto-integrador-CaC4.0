@@ -45,14 +45,8 @@ main .vidriera .juego .info {
     var(--color-secundario) 25%,
     transparent 50%
   );
-  transition:all 1s ease-in-out .15s;
+  transition:all 0.35s ease-in-out .15s;
 }
-
-/* @media (prefers-color-scheme: dark) {
-    main .vidriera .juego .info {
-        color: var(--color-primario);
-  }
-} */
 
 main .vidriera .juego .info .nombre {
   text-align: center;

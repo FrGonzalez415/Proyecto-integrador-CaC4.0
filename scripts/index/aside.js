@@ -29,22 +29,12 @@ categorias.forEach( ( categoria, i ) => {
 
         //  desplegar banner en aside
         categoriasBanner[i].style.width = '100%'
-
-        //  asignar clase activo a la categoria y mostrar imagen de fondo
-        categorias[i].classList.add( 'activo' )
-        categorias[i].style.backgroundImage = `url(./imagenes/categorias/${categorias[i].textContent.toLowerCase()}.png)`
-        categorias[i].style.color = 'transparent'
     })
 
     categorias[i].addEventListener( 'mouseout', () => {
 
         //  Ocultar banner en aside
         categoriasBanner[i].style.width = '0%'
-
-        //  quitar clase activo a la categoria y ocultar imagen de fondo
-        categorias[i].classList.remove( 'activo' )
-        categorias[i].style.backgroundImage = `none`
-        categorias[i].style.color = 'inherit'
     })
 })
 
