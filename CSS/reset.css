@@ -209,27 +209,31 @@ header .menu {
   display: none;
 }
 
-header .carrito {
+header .iconos {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .iconos .carrito, header .iconos .usuario {
   height: 4vh;
   width: 4vh;
   padding: 0.5vh;
   margin: 0vh 1vh;
 }
 
-header .carrito:hover {
-  cursor: pointer;
-}
-
-header .carrito .on, header .carrito:hover .off{
+header .iconos .carrito .on, header .iconos .carrito:hover .off, header .iconos .usuario .on, header .iconos .usuario:hover .off {
   display: none;
 }
 
-header .carrito .off {
+header .iconos .carrito .off, header .iconos .usuario .off {
   display: block;
 }
 
-header .carrito:hover .on{
+header .iconos .carrito:hover .on, header .iconos .usuario:hover .on {
   display: block;
+  cursor: pointer;
   fill: var(--color-selector);
 }
 
@@ -240,6 +244,21 @@ header nav {
 
 header nav a {
   padding: 0 1em;
+}
+
+header nav a:hover {
+  color: var(--color-selector);
+  cursor: pointer;
+}
+
+header .titulo a {
+  padding: 0 1em;
+  font-size: 1.5em;
+}
+
+header .titulo a:hover {
+  color: var(--color-selector);
+  cursor: pointer;
 }
 
 main {
@@ -257,8 +276,8 @@ aside {
 
 footer {
   grid-area: footer;
-  padding: 20px;
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   color: var(--color-secundario);
@@ -266,10 +285,50 @@ footer {
   z-index: 2;
 }
 
+footer .links {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer .links a:hover {
+  color: var(--color-selector);
+  cursor: pointer;
+}
+
+footer .redes {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer .redes .facebook, footer .redes .instagram , footer .redes .x{
+  padding: 0.5em;
+  fill: var(--color-secundario);
+}
+
+footer .redes .facebook:hover, footer .redes .instagram:hover , footer .redes .x:hover{
+  fill: var(--color-selector);
+  cursor: pointer;
+}
+
+footer .copyright {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .copyright p {
+  padding: 0 0.125em;
+}
+
 /*  Resolucion menor a 600px (celulares) */
 @media only screen and (max-width: 600px) {
   body {
-    grid-template-rows: 5vh auto 15vh;
+    grid-template-rows: 5vh auto 20vh;
     grid-template-columns: 100vw;
     grid-template-areas:
       "header"
@@ -287,6 +346,11 @@ footer {
     width: 4vh;
     height: 4vh;
     padding: 0.5vh;
+  }
+
+  header .menu.activo {
+    cursor: pointer;
+    fill: var(--color-selector);
   }
 
   header .opciones {
@@ -307,6 +371,38 @@ footer {
     justify-content: center;
     align-items: center;
   }
+
+  footer {
+    padding: 2.5px;
+  }
+
+  footer .links {
+    order: 1;
+    flex-flow: row wrap;
+    padding: 0 0.5em;
+    width: 100vw;
+  }
+
+  footer .links a {
+    padding: 0 1.5em;
+  }
+
+  footer .redes {
+    order: 0;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  footer .redes .facebook, footer .redes .instagram , footer .redes .x{
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  footer .copyright {
+    order: 2;
+    width: 100vw;
+    flex-flow: row wrap;
+  }
 }
 
 /*  Resolucion mayor a 600px y menor a 1200px (tablets y laptops de baja resolucion) */
@@ -322,6 +418,19 @@ footer {
 
   header {
     height: 5vh;
+  }
+
+  footer {
+    padding: 15px;
+  }
+
+  footer .links a {
+    padding: 0 0.5em;
+  }
+
+  footer .redes .facebook, footer .redes .instagram , footer .redes .x{
+    width: 2.5em;
+    height: 2.5em;
   }
 }
 
@@ -352,4 +461,18 @@ footer {
     top: 5vh;
     bottom: 15vh;
   }
+
+  footer {
+    padding: 20px;
+  }
+
+  footer .redes .facebook, footer .redes .instagram , footer .redes .x{
+    width: 3em;
+    height: 3em;
+  }
+
+  footer .links a {
+    padding: 0 1em;
+  }
+
 }

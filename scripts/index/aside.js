@@ -3,38 +3,40 @@
 const aside             = document.querySelector( 'aside' )
 const ofertas           = document.querySelector( 'main .ofertas' )
 const ofertasBanner     = document.querySelector( 'aside .ofertas' )
-const categorias        = document.querySelectorAll( 'main .categorias .banner' )
+/* const categorias        = document.querySelectorAll( 'main .categorias .banner' ) */
 const categoriasBanner  = document.querySelectorAll( 'aside .categoria' )
 
 
-//  Ofertas
 ofertas.addEventListener( 'mouseover', () => {
-
-    //  desplegar banner en aside
-    ofertasBanner.style.width = '100%'
+    let banner = document.createElement( 'div' )
+    banner.classList.add( `mostrador` )
+    banner.innerHTML = `
+    <img src="./imagenes/aside/${ofertas.className}-1.png" alt="" class="banner" />
+    <img src="./imagenes/aside/${ofertas.className}-2.png" alt="" class="banner" />
+    <img src="./imagenes/aside/${ofertas.className}-3.png" alt="" class="banner" />
+    <img src="./imagenes/aside/${ofertas.className}-4.png" alt="" class="banner" />
+    `
+    aside.appendChild( banner )
 })
 
 ofertas.addEventListener( 'mouseout', () => {
-
-    //  Ocultar banner en aside
-     ofertasBanner.style.width = '0%'
-
+    aside.querySelector('.mostrador').remove()
 })
 
-
-//  Categorias
 categorias.forEach( ( categoria, i ) => {
-
     categorias[i].addEventListener( 'mouseover', () => {
-
-        //  desplegar banner en aside
-        categoriasBanner[i].style.width = '100%'
+        let banner = document.createElement( 'div' )
+        banner.classList.add( `mostrador` )
+        banner.innerHTML = `
+        <img src="./imagenes/aside/${categorias[i].id}-1.png" alt="" class="banner" />
+        <img src="./imagenes/aside/${categorias[i].id}-2.png" alt="" class="banner" />
+        <img src="./imagenes/aside/${categorias[i].id}-3.png" alt="" class="banner" />
+        <img src="./imagenes/aside/${categorias[i].id}-4.png" alt="" class="banner" />
+        `
+        aside.appendChild( banner )
     })
 
     categorias[i].addEventListener( 'mouseout', () => {
-
-        //  Ocultar banner en aside
-        categoriasBanner[i].style.width = '0%'
+        aside.querySelector(`.mostrador`).remove()
     })
 })
-

@@ -307,9 +307,9 @@ main .categorias .banner:hover .titulo{
     width: calc(100% / 3);
   }
 
-  aside .ofertas {
+  aside .mostrador {
     height: 95vh;
-    width: 0vw;
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -317,24 +317,7 @@ main .categorias .banner:hover .titulo{
     transition: all 0.5s ease;
   }
 
-  aside .ofertas .banner {
-    width: 10vw;
-    height: 10vw;
-    background-position: center;
-    background-size: cover;
-  }
-
-  aside .categoria {
-    height: 95vh;
-    width: 0vw;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-around;
-    transition: all 0.5s ease;
-  }
-
-  aside .categoria .banner {
+  aside .mostrador .banner {
     width: 10vw;
     height: 10vw;
     background-position: center;
