@@ -1,0 +1,99 @@
+@import url(./reset.css);
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secundario);
+  }
+  
+  main .formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--color-terciario);
+    background-color: var(--color-secundario);
+    border-radius: 10px;
+    width: 40vw;
+    box-sizing: border-box;
+  }
+  
+  main .formulario .titulo {
+    color: var(--color-terciario);
+    font-size: 2rem;
+    margin: 1em 0;
+    text-align: center;
+  }
+
+  main .formulario .fila {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  main .formulario .fila .input-reg {
+    margin: 0 5px;
+    height: auto;
+    width: auto;
+  }
+  
+  main .formulario .input-reg {
+    height: 30px;
+    width: 250px;
+    margin: 2.5px 0 2.5px 0;
+    text-align: center;
+    color: var(--color-primario);
+    background-color: var(--color-secundario);
+    border: var(--color-terciario) 1px solid;
+    border-radius: 5px;
+    font-size: 1em;
+    /* box-shadow: 3px 3px 3px 3px; */
+  }
+  main .formulario .input-reg::placeholder {
+    color: var(--color-terciario);
+    text-align: center;
+  }
+  
+  main .formulario .input-reg:focus {
+    outline: none;
+    text-align: center;
+  }
+  
+  main .formulario .submit {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    border: none;
+    border-radius: 5px;
+    margin: 1em;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  main .formulario .submit:hover {
+    background-color: var(--color-selector);
+    color: var(--color-primario);
+  }
+  
+  
+  @media screen and (max-width: 600px){
+    main .formulario {
+      width: 95%;
+    }
+    
+  }
+  
+  @media screen and (min-width: 600px) and (max-width: 1200px){
+    main .formulario {
+      width: 75%;
+    }
+  }
+  
+  @media screen and (min-width: 1200px){
+    main .formulario {
+      width: 75%;
+    }
+  }

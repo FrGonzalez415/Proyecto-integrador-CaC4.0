@@ -8,7 +8,7 @@
       rel="stylesheet"
       type="text/css"
       media="all"
-      href="../CSS/categorias.css"
+      href="../CSS/registro.css"
     />
     <title>Ludoteca</title>
   </head>
@@ -21,18 +21,18 @@
           d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
         />
       </svg>
-  
+
       <nav class="opciones">
         <a href="../index.html#inicio"> Inicio </a>
         <a href="../index.html#categorias"> Categorias </a>
         <a href="./nosotros.html"> Nosotros </a>
         <a href="./contacto.html"> Contacto </a>
       </nav>
-  
+
       <div class="titulo">
         <a href="../index.html">Ludoteca Grupo 3</a>
       </div>
-  
+
       <div class="desplegable">
         <div class="iconos">
           <svg
@@ -66,12 +66,12 @@
             />
           </svg>
         </div>
-  
+
         <div class="sesion">
           <a href="./iniciarSesion.html" class="boton">Iniciar sesión</a>
           <a href="./registro.html" class="boton">Registrarse</a>
         </div>
-  
+
         <div class="total">
           <a href="./carrito.html" class="boton">Carrito</a>
         </div>
@@ -79,86 +79,118 @@
     </header>
 
     <main>
-      <h1 class="titulo">Juegos de Cartas</h1>
-      <div class="vidriera">
-        <div class="juego">
-          <div class="info">
-            <p class="nombre">H.D.P.</p>
-            <p class="precio">$12,200</p>
-            <a class="boton" href="./construccion.html">Ver</a>
-          </div>
+      <form class="formulario" id="form-reg">
+        <h1 class="titulo">Registro</h1>
+
+          <input
+            class="input-reg"
+            type="text"
+            name="name"
+            id="name-reg"
+            placeholder="Nombre"
+            required
+          />
+
+          <input
+            class="input-reg"
+            type="text"
+            name="surname"
+            id="surname-reg"
+            placeholder="Apellido"
+            required
+          />
+
+          <input
+            class="input-reg"
+            type="email"
+            name="email"
+            id="email-reg"
+            placeholder="Email ej@ej.com"
+            required
+          />
+
+          <input
+            class="input-reg"
+            type="password"
+            name="password"
+            id="password-reg"
+            placeholder="Contraseña"
+            required
+          />
+
+          <input
+            class="input-reg"
+            type="text"
+            name="cellphone"
+            id="cellphone-reg"
+            placeholder="Número de teléfono"
+            required
+          />
+
+          <input
+            class="input-reg"
+            type="date"
+            name="birthdate"
+            id="birthdate-reg"
+            required
+          />
+
+          <select class="input-reg" name="country" id="country-reg" required>
+            <option value="">Selecciona un país</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Chile">Chile</option>
+            <option value="Mexico">México</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Otro">Otro</option>
+          </select>
+
+          <input
+            class="input-reg"
+            type="text"
+            name="city"
+            id="city-reg"
+            placeholder="Ciudad"
+            required
+          />
+
+          <input
+            class="input-reg"
+            type="text"
+            name="zip"
+            id="zip-reg"
+            placeholder="Código postal"
+            required
+          />
+          
+          <input
+            class="input-reg"
+            type="text"
+            name="street"
+            id="street-reg"
+            placeholder="Calle"
+            required
+          />
+
+          <input
+            class="input-reg"
+            type="text"
+            name="number"
+            id="number-reg"
+            placeholder="Número"
+          />
+
+        <div class="fila">
+          <label for="option-reg">Casa</label>
+          <input class="input-reg" type="radio" name="option" id="option-reg" value="1" />
+          <label for="option2-reg">Departamento</label>
+          <input class="input-reg" type="radio" name="option" id="option2-reg" value="2" />
         </div>
-        <div class="juego">
-          <div class="info">
-            <p class="nombre">H.D.P. Expansiones</p>
-            <p class="precio">$8,300</p>
-            <a class="boton" href="./construccion.html">Ver</a>
-          </div>
-        </div>
-        <div class="juego">
-          <div class="info">
-            <p class="nombre">H.D.P. Dibujame</p>
-            <p class="precio">$16,800</p>
-            <a class="boton" href="./construccion.html">Ver</a>
-          </div>
-        </div>
-        <div class="juego">
-          <div class="info">
-            <p class="nombre">Dixit</p>
-            <p class="precio">$21,450</p>
-            <a class="boton" href="./construccion.html">Ver</a>
-          </div>
-        </div>
-        <div class="juego">
-          <div class="info">
-            <p class="nombre">Marvel Cards Game</p>
-            <p class="precio">$41,450</p>
-            <a class="boton" href="./construccion.html">Ver</a>
-          </div>
-        </div>
-        <div class="juego">
-          <div class="info">
-            <p class="nombre">King of Tokyo</p>
-            <p class="precio">$24,500</p>
-            <a class="boton" href="./construccion.html">Ver</a>
-          </div>
-        </div>
-        <div class="juego">
-          <div class="info">
-            <p class="nombre">Through the Ages</p>
-            <p class="precio">$33,500</p>
-            <a class="boton" href="./construccion.html">Ver</a>
-          </div>
-        </div>
-        <div class="juego">
-          <div class="info">
-            <p class="nombre">Codigo Secreto</p>
-            <p class="precio">$10,000</p>
-            <a class="boton" href="./construccion.html">Ver</a>
-          </div>
-        </div>
-        <div class="juego">
-          <div class="info">
-            <p class="nombre">Codigo Secreto Duo</p>
-            <p class="precio">$10,000</p>
-            <a class="boton" href="./construccion.html">Ver</a>
-          </div>
-        </div>
-        <div class="juego">
-          <div class="info">
-            <p class="nombre">Codigo Secreto Imagenes</p>
-            <p class="precio">$11,000</p>
-            <a class="boton" href="./construccion.html">Ver</a>
-          </div>
-        </div>
-        <div class="juego">
-          <div class="info">
-            <p class="nombre">Aventura Z Lovecraft</p>
-            <p class="precio">$20,000</p>
-            <a class="boton" href="./construccion.html">Ver</a>
-          </div>
-        </div>
-      </div>
+
+        <input class="submit" type="submit" value="Enviar" />
+      </form>
     </main>
 
     <aside></aside>
@@ -206,8 +238,7 @@
         <p>Todos los derechos reservados</p>
       </div>
     </footer>
-    
+
     <script src="../scripts/menu.js"></script>
-    <script src="../scripts/categoria/vidriera.js"></script>
   </body>
 </html>

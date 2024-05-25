@@ -198,48 +198,17 @@ header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   position: fixed;
   z-index: 2;
   color: var(--color-secundario);
   background-color: var(--color-header);
 }
 
-header .menu {
-  display: none;
-}
-
-header .iconos {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: center;
-}
-
-header .iconos .carrito, header .iconos .usuario {
-  height: 4vh;
-  width: 4vh;
-  padding: 0.5vh;
-  margin: 0vh 1vh;
-}
-
-header .iconos .carrito .on, header .iconos .carrito:hover .off, header .iconos .usuario .on, header .iconos .usuario:hover .off {
-  display: none;
-}
-
-header .iconos .carrito .off, header .iconos .usuario .off {
-  display: block;
-}
-
-header .iconos .carrito:hover .on, header .iconos .usuario:hover .on {
-  display: block;
-  cursor: pointer;
-  fill: var(--color-selector);
-}
-
 header nav {
   display: flex;
   flex-flow: row nowrap;
+  padding: calc( (5vh - 1.4em) / 2) 1em;
 }
 
 header nav a {
@@ -251,12 +220,91 @@ header nav a:hover {
   cursor: pointer;
 }
 
-header .titulo a {
-  padding: 0 1em;
+header .titulo {
+  padding: calc( (5vh - 0.9em) / 2) 1em;
   font-size: 1.5em;
 }
 
 header .titulo a:hover {
+  color: var(--color-selector);
+  cursor: pointer;
+}
+
+header .menu {
+  display: none;
+}
+
+header .desplegable {
+  display: flex;
+  position: relative;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .desplegable .sesion, header .desplegable .total {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 0vh;
+  width: 100%;
+  background-color:transparent;
+  color: transparent;
+  transition: all 0.5s ease;
+}
+
+header .desplegable .iconos {
+  display: flex;
+  height: 5vh;
+  width: clamp(100px, 15vw, 20vh);
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .desplegable .iconos .carrito, header .desplegable .iconos .usuario {
+  height: 4vh;
+  width: 4vh;
+  padding: 0.5vh;
+  margin: 0vh 1vh;
+}
+
+header .desplegable .iconos .carrito .on, header .desplegable .iconos .carrito:hover .off, header .desplegable .iconos .usuario .on, header .desplegable .iconos .usuario:hover .off {
+  display: none;
+}
+
+header .desplegable .iconos .carrito .off, header .desplegable .iconos .usuario .off {
+  display: block;
+}
+
+header .desplegable .iconos .carrito:hover, header .desplegable .iconos .usuario:hover{
+  cursor: pointer;
+}
+
+header .desplegable .iconos .carrito:hover .on, header .desplegable .iconos .usuario:hover .on {
+  display: block;
+  fill: var(--color-selector);
+}
+
+header .desplegable.carrito-activo .iconos .carrito .on, header .desplegable.usuario-activo .iconos .usuario .on {
+  display: block;
+  fill: var(--color-selector);
+}
+
+header .desplegable.carrito-activo .iconos .carrito .off, header .desplegable.usuario-activo .iconos .usuario .off {
+  display: none;
+}
+
+header .desplegable.usuario-activo .sesion, header .desplegable.carrito-activo .total {
+  background-color: var(--color-terciario);
+  color: var(--color-secundario);
+  border-radius: 0 0 0.5vh 0.5vh;
+  padding: 0.75vh 0;
+  height: 10vh;
+}
+
+header .desplegable.usuario-activo .sesion .boton:hover, header .desplegable.carrito-activo .total .boton:hover {
   color: var(--color-selector);
   cursor: pointer;
 }
@@ -360,8 +408,9 @@ footer .copyright p {
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
+    background-color: transparent;
+    color: transparent;
     order: 3;
-    background-color: var(--color-terciario);
     transition: all 0.5s ease;
     overflow: hidden;
   }
@@ -370,6 +419,8 @@ footer .copyright p {
     height: 15vh;
     justify-content: center;
     align-items: center;
+    color: var(--color-secundario);
+    background-color: var(--color-terciario);
   }
 
   footer {
@@ -451,15 +502,13 @@ footer .copyright p {
 
   aside {
     width: 15vw;
-    height: 95vh;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     overflow: hidden;
     position: sticky;
     top: 5vh;
-    bottom: 15vh;
   }
 
   footer {
