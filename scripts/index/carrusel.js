@@ -15,7 +15,7 @@ function limpiarActivo ( elemento ) {
     })
 }
 
-//  Desplazar el mostrador con un total de 3 elementos visibles
+//  Desplazar el mostrador con un total de 1 elemento para pantallas de hasta 600px y 3 elementos para pantallas de mayor tamaño
 function desplazamiento ( i ) {
     if ( window.innerWidth < 600 ) {
         mostrador.style.transform = `translateX( ${ (i) * (-100/puntos.length) }% )`
