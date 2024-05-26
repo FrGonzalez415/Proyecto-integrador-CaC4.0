@@ -516,6 +516,10 @@ footer .copyright p {
     top: 5vh;
   }
 
+  aside .mostrador {
+    margin-top: 10vh;
+  }
+
   footer {
     padding: 20px;
   }
