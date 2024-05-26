@@ -43,7 +43,7 @@ main {
   
   main .formulario .input-reg {
     height: 30px;
-    width: 250px;
+    width: 50vw;
     margin: 2.5px 0 2.5px 0;
     text-align: center;
     color: var(--color-primario);
@@ -77,7 +77,7 @@ main {
     background-color: var(--color-selector);
     color: var(--color-primario);
   }
-  
+
   
   @media screen and (max-width: 600px){
     main .formulario {

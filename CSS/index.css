@@ -44,15 +44,36 @@ main .carrusel .mostrador {
 }
 
 main .carrusel .mostrador .elemento {
-  height: 25vh;
+  height: 30vh;
   display: block;
   border-radius: 1vh;
   margin: 2.5vh 2.5vw;
-  background-image: url(../imagenes/logo.png);
-  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   transition: all 1s ease-in-out;
   overflow: hidden;
+}
+
+#imagen1{
+  background-image: url(../imagenes/Juegos/codigo_secreto.png);
+}
+
+#imagen2{
+  background-image: url(../imagenes/juegos/pandemic.png);
+  
+}
+
+#imagen3{
+  background-image: url(../imagenes/juegos/santorini.png);
+}
+
+#imagen4{
+  background-image: url(../imagenes/juegos/through_the_ages.png);
+}
+
+#imagen5{
+  background-image: url(../imagenes/juegos/terraforming_mars.png);
 }
 
 main .carrusel .mostrador .elemento .info {
@@ -72,10 +93,6 @@ main .carrusel .mostrador .elemento .info {
   );
   transition: all 1s ease-in-out;
 }
-
-/* main .carrusel .mostrador .elemento .info:hover, main .carrusel .mostrador .elemento.activo .info {
-  gap: 0em;
-} */
 
 main .carrusel .mostrador .elemento .info .titulo {
   text-align: center;
@@ -216,17 +233,18 @@ main .categorias .banner .titulo {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 0%;
+  height: 100%;
   font-size: 2em;
-  color: transparent;
+  color: var(--color-terciario);
+  text-shadow: 1px 1px 1.5px var(--color-primario);
   text-align: center;
   transition: all 0.25s ease-in-out;
   background: transparent;
 }
 
 main .categorias .banner:hover .titulo{
-  height: 100%;
-  color: var(--color-header);
+  color: var(--color-selector);
+  text-shadow: 1px 1px 1.5px var(--color-header);
   backdrop-filter: blur(1.5px);
 }
 

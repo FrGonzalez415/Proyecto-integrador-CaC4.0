@@ -13,14 +13,12 @@ main .construccion .imagen {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
+   max-height: 350px;
     width: auto;
   }
 
 main .construccion .texto {
-  font-family: "Shadows Into Light", cursive;
   font-size: 2rem;
-  font-weight: bold;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

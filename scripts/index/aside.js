@@ -34,6 +34,7 @@ categorias.forEach( ( categoria, i ) => {
         <img src="./imagenes/aside/${categorias[i].id}-4.png" alt="" class="banner" />
         `
         aside.appendChild( banner )
+        console.log(`${categorias[i].id}`)
     })
 
     categorias[i].addEventListener( 'mouseout', () => {

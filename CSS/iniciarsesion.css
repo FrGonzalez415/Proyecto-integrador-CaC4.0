@@ -16,7 +16,7 @@ main {
     border: 2px solid var(--color-terciario);
     background-color: var(--color-secundario);
     border-radius: 10px;
-    height: 30%;
+    height: 60%;
     box-sizing: border-box;
   }
   
@@ -39,6 +39,7 @@ main {
     font-size: 1em;
     /* box-shadow: 3px 3px 3px 3px; */
   }
+
   main .formulario .input-is::placeholder {
     color: var(--color-terciario);
     text-align: center;

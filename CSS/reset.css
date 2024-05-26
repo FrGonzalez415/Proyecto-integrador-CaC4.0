@@ -32,8 +32,9 @@
   --color-selector: #ff920a;
   --color-header: #054a91;
   /* tipografias */
-  --tipo-principal: Helvetica, Arial, sans-serif;
-  --tipo-secundario: Verdana;
+  --tipo-principal: "Nova Mono", monospace;
+  --tipo-secundario: "Kode Mono", monospace;
+  font-weight: 500;
 }
 
 /* Modo oscuro */
@@ -264,8 +265,8 @@ header .desplegable .iconos {
 }
 
 header .desplegable .iconos .carrito, header .desplegable .iconos .usuario {
-  height: 4vh;
-  width: 4vh;
+  height: 5vh;
+  width: 5vh;
   padding: 0.5vh;
   margin: 0vh 1vh;
 }
@@ -314,6 +315,7 @@ main {
   display: flex;
   flex-flow: column nowrap;
   overflow: hidden;
+  font-family: var(--tipo-secundario);
 }
 
 aside {
@@ -352,12 +354,12 @@ footer .redes {
   align-items: center;
 }
 
-footer .redes .facebook, footer .redes .instagram , footer .redes .x{
+footer .redes .facebook, footer .redes .instagram , footer .redes .x, footer .redes .whatsapp{
   padding: 0.5em;
   fill: var(--color-secundario);
 }
 
-footer .redes .facebook:hover, footer .redes .instagram:hover , footer .redes .x:hover{
+footer .redes .facebook:hover, footer .redes .instagram:hover , footer .redes .x:hover, footer .redes .whatsapp:hover{
   fill: var(--color-selector);
   cursor: pointer;
 }
@@ -384,6 +386,40 @@ footer .copyright p {
       "footer";
   }
 
+  footer {
+    padding: 2.5px;
+  }
+
+  footer .links {
+    order: 1;
+    flex-flow: row wrap;
+    padding: 0 0.5em;
+    width: 100vw;
+  }
+
+  footer .links a {
+    padding: 0 1.5em;
+  }
+
+  footer .redes {
+    order: 0;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  footer .redes .facebook, footer .redes .instagram , footer .redes .x, footer .redes .whatsapp{
+    width: 3em;
+    height: 3em;
+  }
+
+  footer .copyright {
+    order: 2;
+    width: 100vw;
+    flex-flow: row wrap;
+  }
+}
+/*  menu desplegable para resoluciones menores a 800px */
+@media only screen and (max-width: 800px){
   header {
     height: 5vh;
     flex-flow: row wrap;
@@ -393,7 +429,7 @@ footer .copyright p {
     display: block;
     width: 4vh;
     height: 4vh;
-    padding: 0.5vh;
+    margin: 0.5vh 1vh;
   }
 
   header .menu.activo {
@@ -422,38 +458,7 @@ footer .copyright p {
     color: var(--color-secundario);
     background-color: var(--color-terciario);
   }
-
-  footer {
-    padding: 2.5px;
-  }
-
-  footer .links {
-    order: 1;
-    flex-flow: row wrap;
-    padding: 0 0.5em;
-    width: 100vw;
-  }
-
-  footer .links a {
-    padding: 0 1.5em;
-  }
-
-  footer .redes {
-    order: 0;
-    width: 100vw;
-    justify-content: center;
-  }
-
-  footer .redes .facebook, footer .redes .instagram , footer .redes .x{
-    width: 2.5em;
-    height: 2.5em;
-  }
-
-  footer .copyright {
-    order: 2;
-    width: 100vw;
-    flex-flow: row wrap;
-  }
+  
 }
 
 /*  Resolucion mayor a 600px y menor a 1200px (tablets y laptops de baja resolucion) */
@@ -479,7 +484,7 @@ footer .copyright p {
     padding: 0 0.5em;
   }
 
-  footer .redes .facebook, footer .redes .instagram , footer .redes .x{
+  footer .redes .facebook, footer .redes .instagram , footer .redes .x, footer .redes .whatsapp{
     width: 2.5em;
     height: 2.5em;
   }
@@ -515,7 +520,7 @@ footer .copyright p {
     padding: 20px;
   }
 
-  footer .redes .facebook, footer .redes .instagram , footer .redes .x{
+  footer .redes .facebook, footer .redes .instagram , footer .redes .x, footer .redes .whatsapp{
     width: 3em;
     height: 3em;
   }

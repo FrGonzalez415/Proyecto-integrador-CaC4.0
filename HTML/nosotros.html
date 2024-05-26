@@ -1,105 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="../imagenes/logo.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" media="all" href="../CSS/nosotros.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../imagenes/logo.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="../CSS/nosotros.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Nova+Mono&display=swap"
+      rel="stylesheet"
+    />
     <title>Ludoteca</title>
-</head>
+  </head>
 
-<body>
-  <header>
-    <svg class="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-      <path
-        fill-rule="evenodd"
-        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-      />
-    </svg>
+  <body>
+    <header>
+      <svg class="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <path
+          fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+        />
+      </svg>
 
-    <nav class="opciones">
-      <a href="../index.html#inicio"> Inicio </a>
-      <a href="../index.html#categorias"> Categorias </a>
-      <a href="./nosotros.html"> Nosotros </a>
-      <a href="./contacto.html"> Contacto </a>
-    </nav>
+      <nav class="opciones">
+        <a href="../index.html#inicio"> Inicio </a>
+        <a href="../index.html#categorias"> Categorias </a>
+        <a href="./nosotros.html"> Nosotros </a>
+        <a href="./contacto.html"> Contacto </a>
+      </nav>
 
-    <div class="titulo">
-      <a href="../index.html">Ludoteca Grupo 3</a>
-    </div>
-
-    <div class="desplegable">
-      <div class="iconos">
-        <svg
-          class="carrito"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-        >
-          <path
-            class="off"
-            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
-          />
-          <path
-            class="on"
-            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
-          />
-        </svg>
-        <svg
-          class="usuario"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-        >
-          <path
-            class="off"
-            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
-          />
-          <path class="on" d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-          <path
-            class="on"
-            fill-rule="evenodd"
-            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
-          />
-        </svg>
+      <div class="titulo">
+        <a href="../index.html">Ludoteca Grupo 3</a>
       </div>
 
-      <div class="sesion">
-        <a href="./iniciarSesion.html" class="boton">Iniciar sesión</a>
-        <a href="./registro.html" class="boton">Registrarse</a>
+      <div class="desplegable">
+        <div class="iconos">
+          <svg
+            class="carrito"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+          >
+            <path
+              class="off"
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+            />
+            <path
+              class="on"
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+            />
+          </svg>
+          <svg
+            class="usuario"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+          >
+            <path
+              class="off"
+              d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+            />
+            <path class="on" d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+            <path
+              class="on"
+              fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+            />
+          </svg>
+        </div>
+
+        <div class="sesion">
+          <a href="./iniciarSesion.html" class="boton">Iniciar sesión</a>
+          <a href="./registro.html" class="boton">Registrarse</a>
+        </div>
+
+        <div class="total">
+          <a href="./carrito.html" class="boton">Carrito</a>
+        </div>
       </div>
+    </header>
 
-      <div class="total">
-        <a href="./carrito.html" class="boton">Carrito</a>
-      </div>
-    </div>
-  </header>
+    <main>
+      <!--Historia-->
 
-  <main class="container-nos">
-    <!--Historia-->
+      <p class="nosotros">
+        La Ludoteca G3G, con sede en la bulliciosa ciudad de Buenos Aires, ha
+        sido un destino destacado para los amantes de los juegos de mesa durante
+        los últimos cinco años. Desde su inauguración, ha sido un punto de
+        encuentro vibrante para jugadores de todas las edades y habilidades,
+        ofreciendo una amplia gama de juegos de mesa que van desde clásicos
+        hasta los últimos lanzamientos. Con una atmósfera acogedora y un
+        personal apasionado, la Ludoteca G3G se ha ganado rápidamente una
+        reputación como un lugar donde los jugadores pueden explorar nuevas
+        aventuras lúdicas, participar en emocionantes torneos y eventos, y
+        encontrar esa joya escondida que se convierte en su nuevo juego
+        favorito. Ya sea que estés buscando un desafío estratégico, una
+        experiencia cooperativa o simplemente un momento de diversión con amigos
+        y familiares, la Ludoteca G3G tiene algo para todos. Su compromiso con
+        la comunidad de jugadores y su dedicación a proporcionar experiencias
+        memorables hacen de G3G un punto de referencia en el mapa de juegos de
+        mesa de Buenos Aires.
+      </p>
 
-      <p class="nosotros">La Ludoteca G3G, con sede en la bulliciosa ciudad de Buenos Aires, ha sido un destino
-        destacado para los amantes de los juegos de mesa durante los últimos cinco años. Desde su inauguración, ha sido
-        un punto de encuentro vibrante para jugadores de todas las edades y habilidades, ofreciendo una amplia gama de
-        juegos de mesa que van desde clásicos hasta los últimos lanzamientos.
-        Con una atmósfera acogedora y un personal apasionado, la Ludoteca G3G se ha ganado rápidamente una
-        reputación como un lugar donde los jugadores pueden explorar nuevas aventuras lúdicas, participar en
-        emocionantes torneos y eventos, y encontrar esa joya escondida que se convierte en su nuevo juego favorito.
-        Ya sea que estés buscando un desafío estratégico, una experiencia cooperativa o simplemente un momento de
-        diversión con amigos y familiares, la Ludoteca G3G tiene algo para todos. Su compromiso con la comunidad de
-        jugadores y su dedicación a proporcionar experiencias memorables hacen de G3G un punto de referencia en el mapa
-        de juegos de mesa de Buenos Aires.</p>
-      
-
-    <div class="container-map mapa">
       <iframe
+        class="mapa"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.251748727221!2d-58.39134944496149!3d-34.59779506098073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccabdfc5dde23%3A0x58a7382ebab3a0f5!2sAv.%20Sta.%20Fe%201892%2C%20C1123AAN%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1713475366831!5m2!1ses-419!2sar"
-        width="250" height="150" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </main>
 
-    </div>
+    <aside></aside>
 
-  </main>
-
-    
     <footer>
       <div class="links">
         <a href="./terminos.html">Terminos y condiciones</a>
@@ -136,6 +159,17 @@
             />
           </svg>
         </a>
+        <a href="https://web.whatsapp.com/" target="_blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="whatsapp"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
+            />
+          </svg>
+        </a>
       </div>
 
       <div class="copyright">
@@ -143,7 +177,7 @@
         <p>Todos los derechos reservados</p>
       </div>
     </footer>
-    
+
     <script src="../scripts/menu.js"></script>
-</body>
+  </body>
 </html>
