@@ -1,2 +1,34 @@
 @import url(./reset.css);
-@import url(./construccion.css);
+@import url(./contacto.css);
+.input-arrep{
+    border: solid 1px var(--color-terciario);
+    border-radius: 5px;
+}
+
+.pedido{
+    margin-bottom: 10px;
+}
+
+.label-arrep{
+    color: var(--color-terciario);
+    margin-top: 5px;
+}
+
+.revocar{
+    font-size: 0.8rem;
+}
+
+.formulario{
+    margin: 10px 0;
+}
+
+.text-arrep{
+    height: 100px;
+    width: 250px;
+    margin: 10px 0 10px 0;
+    color: var(--color-primario);
+    background-color: var(--color-secundario);
+    border: var(--color-terciario) 1px solid;
+    border-radius: 5px;
+    font-size: 1rem;
+}
