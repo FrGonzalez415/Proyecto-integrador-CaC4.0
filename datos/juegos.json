@@ -1,0 +1,417 @@
+[
+    {
+        "id": "01",
+        "titulo": "Ajedrez",
+        "imagen": "../imagenes/Juegos/ajedrez.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Clasicos",
+                "id": "05"
+            }
+        ],
+        "precio": 15000
+    },
+    {
+        "id": "02",
+        "titulo": "Aventura Z Lovecraft",
+        "imagen": "../imagenes/Juegos/aventura_z_lovecraft.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Cartas",
+                "id": "02"
+            },
+            {
+                "nombre": "Cooperativos",
+                "id": "04"
+            }
+        ],
+        "precio": 20000
+    },
+    {
+        "id": "03",
+        "titulo": "Carcasonne",
+        "imagen": "../imagenes/Juegos/carcassonne.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            }
+        ],
+        "precio": 26800
+    },
+    {
+        "id": "04",
+        "titulo": "Catan",
+        "imagen": "../imagenes/Juegos/catan.png",
+        "categoria": [
+        {
+            "nombre": "Estrategia",
+            "id": "01"
+        },
+        {
+            "nombre": "Familiares",
+            "id": "03"}
+        ],
+        "precio": 37500
+    },
+    {
+        "id": "05",
+        "titulo": "Codigo Secreto",
+        "imagen": "../imagenes/Juegos/codigo_secreto.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Cartas",
+                "id": "02"
+            },
+            {
+                "nombre": "Familiares",
+                "id": "03"
+            }
+        ],
+        "precio": 10000
+    },
+    {
+        "id": "06",
+        "titulo": "Codigo Secreto Duo",
+        "imagen": "../imagenes/Juegos/codigo_secreto_duo.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Cartas",
+                "id": "02"
+            },
+            {
+                "nombre": "Familiares",
+                "id": "03"
+            }
+        ],
+        "precio": 10000
+    },
+    {
+        "id": "07",
+        "titulo": "Codigo Secreto Imagenes",
+        "imagen": "../imagenes/Juegos/codigo_secreto_imagenes.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Cartas",
+                "id": "02"
+            },
+            {
+                "nombre": "Familiares",
+                "id": "03"
+            }
+        ],
+        "precio": 11000
+    },
+    {
+        "id": "08",
+        "titulo": "Damas",
+        "imagen": "../imagenes/Juegos/damas.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Clasicos",
+                "id": "05"
+            }
+        ],
+        "precio": 15000
+    },
+    {
+        "id": "09",
+        "titulo": "Dixit",
+        "imagen": "../imagenes/Juegos/dixit.png",
+        "categoria": [
+            {
+                "nombre": "Cartas",
+                "id": "02"
+            },
+            {
+                "nombre": "Familiares",
+                "id": "03"
+            }
+        ],
+        "precio": 21450
+    },
+    {
+        "id": "10",
+        "titulo": "Domino",
+        "imagen": "../imagenes/Juegos/domino.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Clasicos",
+                "id": "05"
+            }
+        ],
+        "precio": 9700
+    },
+    {
+        "id": "11",
+        "titulo": "El juego de la oca",
+        "imagen": "../imagenes/Juegos/el_juego_de_la_oca.png",
+        "categoria": [
+            {
+                "nombre": "Familiares",
+                "id": "03"
+            },
+            {
+                "nombre": "Clasicos",
+                "id": "05"
+        }
+        ],
+        "precio": 10500
+    },
+    {
+        "id": "12",
+        "titulo": "Everdell",
+        "imagen": "../imagenes/Juegos/everdell.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            }
+        ],
+        "precio": 34250
+    },
+    {
+        "id": "13",
+        "titulo": "Gaia Project",
+        "imagen": "../imagenes/Juegos/gaia_project.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            }
+        ],
+        "precio": 40000
+    },
+    {
+        "id": "14",
+        "titulo": "H.D.P.",
+        "imagen": "../imagenes/Juegos/hdp.png",
+        "categoria": [
+            {
+                "nombre": "Cartas",
+                "id": "02"
+            }
+        ],
+        "precio": 12200
+    },
+    {
+        "id": "15",
+        "titulo": "H.D.P. Dibujame",
+        "imagen": "../imagenes/Juegos/hdp_dibujame.png",
+        "categoria": [
+            {
+                "nombre": "Cartas",
+                "id": "02"
+            }
+        ],
+        "precio": 16800
+    },
+    {
+        "id": "16",
+        "titulo": "H.D.P. Expansiones",
+        "imagen": "../imagenes/Juegos/hdp_expansiones.png",
+        "categoria": [
+            {
+                "nombre": "Cartas",
+                "id": "02"
+            }
+        ],
+        "precio": 8300
+    },
+    {
+        "id": "17",
+        "titulo": "King of Tokyo",
+        "imagen": "../imagenes/Juegos/king_of_tokyo.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Cartas",
+                "id": "02"
+            },
+            {
+                "nombre": "Familiares",
+                "id": "03"
+            }
+        ],
+        "precio": 24500
+    },
+    {
+        "id": "18",
+        "titulo": "Marvel Cards Game",
+        "imagen": "../imagenes/Juegos/marvel_cards_game.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Cartas",
+                "id": "02"
+            },
+            {
+                "nombre": "Cooperativos",
+                "id": "04"
+            }
+        ],
+        "precio": 41450
+    },
+    {
+        "id": "19",
+        "titulo": "Pandemic",
+        "imagen": "../imagenes/Juegos/pandemic.png",
+        "categoria": [
+            {
+                "nombre": "Cooperativos",
+                "id": "04"
+            }
+        ],
+        "precio": 35000
+    },
+    {
+        "id": "20",
+        "titulo": "Pocimas",
+        "imagen": "../imagenes/Juegos/pocimas.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Familiares",
+                "id": "03"
+            }
+        ],
+        "precio": 28700
+    },
+    {
+        "id": "21",
+        "titulo": "Praga",
+        "imagen": "../imagenes/Juegos/praga.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            }
+        ],
+        "precio": 30500
+    },
+    {
+        "id": "21",
+        "titulo": "Raids",
+        "imagen": "../imagenes/Juegos/raids.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            }
+        ],
+        "precio": 1000
+    },
+    {
+        "id": "22",
+        "titulo": "Santorini",
+        "imagen": "../imagenes/Juegos/santorini.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Familiares",
+                "id": "03"
+            }
+        ],
+        "precio": 30500
+    },
+    {
+        "id": "23",
+        "titulo": "Spirits Islands",
+        "imagen": "../imagenes/Juegos/spirits_islands.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Familiares",
+                "id": "03"
+            },
+            {
+                "nombre": "Cooperativos",
+                "id": "04"
+            }
+        ],
+        "precio": 36450
+    },
+    {
+        "id": "24",
+        "titulo": "Terra Mystica",
+        "imagen": "../imagenes/Juegos/terra_mystica.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            }
+        ],
+        "precio": 31000
+    },
+    {
+        "id": "25",
+        "titulo": "Terraforming Mars",
+        "imagen": "../imagenes/Juegos/terraforming_mars.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            }
+        ],
+        "precio": 31000
+    },
+    {
+        "id": "26",
+        "titulo": "Through the Ages",
+        "imagen": "../imagenes/Juegos/through_the_ages.png",
+        "categoria": [
+            {
+                "nombre": "Estrategia",
+                "id": "01"
+            },
+            {
+                "nombre": "Cartas",
+                "id": "02"
+            }
+        ],
+        "precio": 33500
+    }
+]
