@@ -1,94 +1,93 @@
+'use strict'
 
-function indexRouter(app, fs, __dirname) {
+import express from 'express'
+import path from 'path';
+import { fileURLToPath } from 'url';
+import apis from './apis.js'
 
-//                                  RUTAS
+// Construir __dirname basado en import.meta.url
+const __dirname = path.dirname( fileURLToPath(import.meta.url) )
 
-//                                  Principal
-app.get('/', (req, res) => {
-    const index = fs.readFileSync( __dirname + '/public/HTML/index.html', 'utf-8')
-    res.type('html').send(index)
+//  Enrutador
+
+const router = express.Router()
+
+//                                  INICIO
+router.get('/', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'index.html'))
 })
 
-//                                  Categorías
-
-/* app.get('/categorias', (req, res) => {
-    const index = fs.readFileSync( __dirname + '/public/HTML/index.html#categorias', 'utf-8')
-    res.type('html').send(index)
-}) */
-
-//  Cartas
-app.get('/cartas', (req, res) => {
-    const cartas = fs.readFileSync( __dirname + '/public/HTML/categoriaCartas.html', 'utf-8')
-    res.type('html').send(cartas)
+//                                  CATEGORIAS
+// Cartas
+router.get('/cartas', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url + '.html'))
 })
 
-//  Clásicos
-app.get('/clasicos', (req, res) => {
-    const Clásicos = fs.readFileSync( __dirname + '/public/HTML/categoriaClásicos.html', 'utf-8')
-    res.type('html').send(Clásicos)
+// Clásicos
+router.get('/clasicos', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url + '.html'))
 })
 
-//  Cooperativos
-app.get('/cooperativos', (req, res) => {
-    const Cooperativos = fs.readFileSync( __dirname + '/public/HTML/categoriaCooperativos.html', 'utf-8')
-    res.type('html').send(Cooperativos)
+// Cooperativos
+router.get('/cooperativos', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url + '.html'))
 })
 
-//  Estrategia
-app.get('/estrategia', (req, res) => {
-    const Estrategia = fs.readFileSync( __dirname + '/public/HTML/categoriaEstrategia.html', 'utf-8')
-    res.type('html').send(Estrategia)
+// Estrategia
+router.get('/estrategia', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url + '.html'))
 })
 
-//  Familiares
-app.get('/familiares', (req, res) => {
-    const Familiares = fs.readFileSync( __dirname + '/public/HTML/categoriaFamiliares.html', 'utf-8')
-    console.log(req.url)
-    res.type('html').send(Familiares)
+// Familiares
+router.get('/familiares', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url + '.html'))
 })
 
-//                                  Registro
-app.get('/registro', (req, res) => {
-    const registro = fs.readFileSync( __dirname + '/public/HTML/registro.html', 'utf-8')
-    res.type('html').send(registro)
+// Ofertas
+router.get('/ofertas', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url + '.html'))
 })
 
-//                                  Inicio de sesión
-app.get('/login', (req, res) => {
-    const login = fs.readFileSync( __dirname + '/public/HTML/iniciarSesion.html', 'utf-8')
-    res.type('html').send(login)
+//                                  REGISTRO
+router.get('/registro', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url + '.html'))
 })
 
-//                                  Contacto
-app.get('/contacto', (req, res) => {
-    const contacto = fs.readFileSync( __dirname + '/public/HTML/contacto.html', 'utf-8')
-    res.type('html').send(contacto)
+//                                  LOGIN 
+router.get('/login', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url + '.html'))
 })
 
-//                                  Nosotros
-app.get('/nosotros', (req, res) => {
-    const nosotros = fs.readFileSync( __dirname + '/public/HTML/nosotros.html', 'utf-8')
-    res.type('html').send(nosotros)
+//                                  CONTACTO
+router.get('/contacto', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url + '.html'))
 })
 
-//                                  Terminos y condiciones
-app.get('/terminos-y-condiciones', (req, res) => {
-    const terminos = fs.readFileSync( __dirname + '/public/HTML/terminos.html', 'utf-8')
-    res.type('html').send(terminos)
+//                                  NOSOTROS
+router.get('/nosotros', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url + '.html'))
 })
 
-//                                  Arrepentimiento de compra
-app.get('/arrepentimiento', (req, res) => {
-    const arrepentimiento = fs.readFileSync( __dirname + '/public/HTML/arrepentimiento.html', 'utf-8')
-    res.type('html').send(arrepentimiento)
+//                                  TERMINOS Y CONDICIONES
+router.get('/terminos-y-condiciones', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url + '.html'))
 })
+
+//                                  ARREPENTIMIENTO DE COMPRA
+router.get('/arrepentimiento', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url + '.html'))
+})
+
+
+//                                  MANEJO DE APIs
+
+router.use('/api', apis)
 
 /* //                                  Error 404
-app.get('*', (req, res) => {
+router.get('*', (req, res) => {
     const error404 = fs.readFileSync( __dirname + '/public/HTML/404.html', 'utf-8')
     res.type('html').send(error404)
 }) */
 
-}
 
-export default indexRouter
+export default router 

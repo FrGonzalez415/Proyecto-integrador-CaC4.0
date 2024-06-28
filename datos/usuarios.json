@@ -1,0 +1,18 @@
+[
+    {
+        "ID": 1,
+        "nombre": "Francisco",
+        "apellido": "González",
+        "email": "frgonzalez.415@gmail.com",
+        "contraseña": "Francisco123",
+        "telefono": "3434402255",
+        "cumpleaños": "1997-06-20",
+        "pais": "Argentina",
+        "provincia": "Entre Ríos",
+        "ciudad": "Paraná",
+        "codigo postal": "3100",
+        "calle": "Jorge Newbery",
+        "numero": "1331",
+        "vivienda": "Casa"
+    }
+]

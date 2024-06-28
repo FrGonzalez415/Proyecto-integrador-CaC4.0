@@ -8,7 +8,7 @@
       rel="stylesheet"
       type="text/css"
       media="all"
-      href="../CSS/terminos.css"
+      href="../CSS/iniciarsesion.css"
     >
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
     <link
@@ -35,7 +35,7 @@
 
       <nav class="opciones">
         <a href="/"> Inicio </a>
-        <a href="../index.html#categorias"> Categorias </a>
+        <a href="/#categorias"> Categorias </a>
         <a href="/nosotros"> Nosotros </a>
         <a href="/contacto"> Contacto </a>
       </nav>
@@ -90,17 +90,27 @@
     </header>
 
     <main>
-      <div class="construccion">
-        <img
-          class="imagen"
-          src="../imagenes/construccion2.png"
-          alt="Sitio en construcción"
+      <form class="formulario" id="form-is">
+        <h1 class="titulo">Iniciar sesión</h1>
+
+        <input
+          class="input-is"
+          type="email"
+          name="email"
+          id="email-is"
+          placeholder="Email"
         >
-        <div class="texto">
-          <p>¡Estamos subiendo de nivel para vos!</p>
-          <p>¡Nos vemos pronto!</p>
-        </div>
-      </div>
+
+        <input
+          class="input-is"
+          type="password"
+          name="password"
+          id="password-is"
+          placeholder="Contraseña"
+        >
+
+        <button class="submit" type="submit">Ingresar</button>
+      </form>
     </main>
 
     <aside></aside>
@@ -160,6 +170,6 @@
       </div>
     </footer>
 
-    <script type="module" src="../scripts/menu.js"></script>
+    <script type="module" src="../scripts/login/login.js"></script>
   </body>
 </html>
