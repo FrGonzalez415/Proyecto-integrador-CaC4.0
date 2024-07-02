@@ -327,7 +327,7 @@
         "precio": 30500
     },
     {
-        "id": "21",
+        "id": "22",
         "titulo": "Raids",
         "imagen": "../imagenes/Juegos/raids.png",
         "categoria": [
@@ -339,7 +339,7 @@
         "precio": 1000
     },
     {
-        "id": "22",
+        "id": "23",
         "titulo": "Santorini",
         "imagen": "../imagenes/Juegos/santorini.png",
         "categoria": [
@@ -355,7 +355,7 @@
         "precio": 30500
     },
     {
-        "id": "23",
+        "id": "24",
         "titulo": "Spirits Islands",
         "imagen": "../imagenes/Juegos/spirits_islands.png",
         "categoria": [
@@ -375,7 +375,7 @@
         "precio": 36450
     },
     {
-        "id": "24",
+        "id": "25",
         "titulo": "Terra Mystica",
         "imagen": "../imagenes/Juegos/terra_mystica.png",
         "categoria": [
@@ -387,7 +387,7 @@
         "precio": 31000
     },
     {
-        "id": "25",
+        "id": "26",
         "titulo": "Terraforming Mars",
         "imagen": "../imagenes/Juegos/terraforming_mars.png",
         "categoria": [
@@ -399,7 +399,7 @@
         "precio": 31000
     },
     {
-        "id": "26",
+        "id": "27",
         "titulo": "Through the Ages",
         "imagen": "../imagenes/Juegos/through_the_ages.png",
         "categoria": [

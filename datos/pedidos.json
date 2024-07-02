@@ -1,0 +1,19 @@
+[
+    {
+        "id-pedido": 1,
+        "id-usuario": 1,
+        "fecha": "2021-06-20",
+        "productos": [
+            {
+                "id-producto": 1,
+                "cantidad": 2
+            },
+            {
+                "id-producto": 2,
+                "cantidad": 1
+            }
+        ],
+        "total": 1000,
+        "estado": "pendiente"
+    }
+]

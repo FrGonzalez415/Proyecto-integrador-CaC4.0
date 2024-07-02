@@ -24,7 +24,7 @@ function cargarJuegos( juegos ) {
 
 export default cargarJuegos
 
-{/* <h1 class="titulo">Juegos Clásicos</h1>
+/* <h1 class="titulo">Juegos Clásicos</h1>
       <div class="vidriera">
         <div class="juego">
           <div class="info">
@@ -32,4 +32,4 @@ export default cargarJuegos
             <p class="precio">$15,000</p>
             <a class="boton" href="./mostrador.html">Ver</a>
           </div>
-        </div> */}
+        </div> */
