@@ -45,7 +45,7 @@ if (!nameRegex.test(name) || name.length < 5) {
   valid = false;
   alert("Ingrese un nombre válido");
 }
-if (!nameRegex.test(surname) || surname.length < 8) {
+if (!nameRegex.test(surname) || surname.length < 4) {
   valid = false;
   alert("Ingrese un apellido válido");
 }
@@ -107,9 +107,9 @@ if (!nameRegex.test(surname) || surname.length < 8) {
         nombre: name,
         apellido: surname,
         email: email,
-        contraseña: password,
+        password: password,
         telefono: cellphone,
-        cumpleaños: birthdate,
+        fechaNacimiento: birthdate,
         pais: country,
         provincia: province,
         ciudad: city,

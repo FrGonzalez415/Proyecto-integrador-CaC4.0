@@ -7,7 +7,6 @@ import Usuarios from "../modules/usuarios.js";
 import Pedidos from "../modules/pedidos.js";
 
 const router = express.Router();
-const error = new Error();
 
 // Configura el router para recibir solicitudes JSON
 router.use(express.json());
@@ -15,29 +14,24 @@ router.use(express.json());
 // Ruta para registrar un nuevo usuario
 router.post("/registro", (req, res) => {
   // Se registra el nuevo usuario
-  const registro = Usuarios.registrarUsuario(req.body);
-  console.log(registro);
-  try {
-    if (registro.error === undefined) {
-      // Si no hay errores, se envía un estado 201 y un mensaje de éxito
-      res
-        .status(201)
-        .json({ estado: "Usuario registrado", usuario: registro.usuario });
-    } else if (registro.error === "email") {
-      // Si el error es por email, se envía un estado 409 y un mensaje de error
-      error.statusCode = 409;
-      error.message = "Ya se encuentra un usuario registrado con ese email";
-      throw error;
-    } else {
-      // Si hay un error, se envía un estado 500 y un mensaje de error
-      error.statusCode = 500;
-      error.message = "Error al registrar el usuario";
-      throw error;
-    }
-  } catch (err) {
-    // Si hay un error, se envía un estado y un mensaje de error
-    res.status(err.statusCode).json({ error: err.message });
-  }
+  Usuarios.registrarUsuario(req.body)
+  .then((registro) => {
+  res.status(201).json({ estado: "Usuario registrado", usuario: registro.usuario });
+    })
+    .catch((error) => {
+        let statusCode
+        let message
+        if (error.error === "email") {
+        // Si el error es por email, se envía un estado 409 y un mensaje de error
+        statusCode = 409;
+        message = "Ya se encuentra un usuario registrado con ese email";
+      } else {
+        // Si hay un error, se envía un estado 500 y un mensaje de error
+        statusCode = 500;
+        message = "Error al registrar el usuario";
+      }
+      res.status(statusCode).json({ error: message })
+    });
 });
 
 // Ruta para validar el login de un usuario

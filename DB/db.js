@@ -88,26 +88,34 @@ const DB = {
   },
 
   // Método para obtener datos de tablas con una relación de muchos a muchos
-  obtenerDatosRelacionadosNaM( tablaDatos, tablaFiltro, columnaFiltro, valorFiltro ) {
+  obtenerDatosRelacionadosNaM(
+    tablaDatos,
+    tablaFiltro,
+    columnaFiltro,
+    valorFiltro
+  ) {
     return new Promise((resolve, reject) => {
       this.conectar()
         .then(() => {
-            let relacion;
+          let relacion;
           if (
             (tablaDatos === "juego" && tablaFiltro === "categoria") ||
             (tablaDatos === "categoria" && tablaFiltro === "juego")
           ) {
             // Construir la consulta SQL utilizando los parámetros
-            relacion = 'categoria_has_juego';
+            relacion = "categoria_has_juego";
           } else if (
             (tablaDatos === "pedido" && tablaFiltro === "juego") ||
             (tablaDatos === "juego" && tablaFiltro === "pedido")
           ) {
             // Construir la consulta SQL utilizando los parámetros
-            relacion = 'pedido_has_juego';
+            relacion = "pedido_has_juego";
           } else {
             // Si no se cumple ninguna de las condiciones anteriores, se rechaza la promesa
-            reject({error: "Error al intentar obtener datos, las tablas ingresadas no tienen dicha relación"});
+            reject({
+              error:
+                "Error al intentar obtener datos, las tablas ingresadas no tienen dicha relación",
+            });
           }
           const consulta = `
                 SELECT ${tablaDatos}.*
@@ -128,6 +136,31 @@ const DB = {
             });
         })
         .finally(() => {
+          this.desconectar();
+        });
+    });
+  },
+
+  // Método para insertar datos en multiples columnas de una tabla en la base de datos
+  insertarEnBaseDeDatos(tabla, datos) {
+    return new Promise((resolve, reject) => {
+      // Conectar a la base de datos (asegúrate de que `conectar` esté definido)
+      this.conectar()
+        .then(() => {
+          // Ejecutar la consulta
+          this.connection
+            .query(`INSERT INTO ?? SET ?`, [tabla, datos])
+            .then((resultados) => {
+              console.log("Datos insertados correctamente");
+              resolve(resultados);
+            })
+            .catch((error) => {
+              console.error("Error al insertar datos", error);
+              reject(error);
+            });
+        })
+        .finally(() => {
+          // Desconectar de la base de datos
           this.desconectar();
         });
     });
