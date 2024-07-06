@@ -10,10 +10,10 @@ const DB = {
     return new Promise((resolve, reject) => {
       mysql
         .createConnection({
-          host: "localhost",
-          user: "root",
-          password: "root",
-          database: "ludoteca",
+          host: "mysql-ludoteca.alwaysdata.net",
+          user: "ludoteca",
+          password: "CaC_Ludoteca",
+          database: "ludoteca_db",
         })
         .then((connection) => {
           this.connection = connection;
