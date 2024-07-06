@@ -58,7 +58,42 @@ const Usuarios = {
   },
 
   // Método para modificar un usuario REVISAR
-  modificarUsuario(usuario) {},
+  modificarUsuario(usuarioModificado) {
+    return new Promise ((resolve, reject) => {
+      DB.buscarEnBaseDeDatos("usuario", "email", usuarioModificado.email)
+      .then((usuario) =>{
+        if(usuario.error === "email") {
+          reject({error: "usuario no encontrado"});
+        }else{
+          let datosUsuario = {
+            nombre: usuarioModificado.nombre,
+            apellido: usuarioModificado.apellido,
+            telefono: usuarioModificado.telefono,
+            fechaNacimiento: usuarioModificado.fechaNacimiento,
+            pais: usuarioModificado.pais,
+            provincia: usuarioModificado.provincia,
+            ciudad: usuarioModificado.ciudad,
+            codigoPostal: usuarioModificado.codigoPostal,
+            calle: usuarioModificado.calle,
+            numero: usuarioModificado.numero,
+            vivienda: usuarioModificado.vivienda
+          };
+          DB.modificarEnBaseDeDatos("datos_usuario", datosUsuario, "idusuario", usuario.idusuario)
+          .then(([result]) => {
+            resolve({mensaje: "Datos actualizados correctamente"});
+          })
+          .catch((error) => {
+            console.log("El error es el siguiente: ", error);
+            reject(error);
+          });
+        }
+      })
+      .catch((error) => {
+        console.log("El error es el siguiente: ", error);
+        reject(error);
+      });
+    });
+  },
 
   // Método para eliminar un usuario
   eliminarUsuario(id) {},
@@ -85,7 +120,22 @@ const Usuarios = {
   },
 
   // Método para mostrar usuario por ID
-  mostrarUsuario(id) {},
+  mostrarDatos(id) {
+    return new Promise((resolve, reject) => {
+      DB.buscarEnBaseDeDatos("datos_usuario", "idusuario", id)
+        .then((usuario) => {
+          if (usuario.error === "id") {
+            reject({ error: "usuario no encontrado" });
+          } else {
+            resolve(usuario);
+          }
+        })
+        .catch((error) => {
+          console.log("El error es el siguiente: ", error);
+          reject(error);
+        });
+    });
+  },
 };
 
 export default Usuarios;

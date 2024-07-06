@@ -51,6 +51,39 @@ const DB = {
     });
   },
 
+  // Método para obtener todos los datos de una tabla
+  obtenerTabla(tabla) {
+    return new Promise((resolve, reject) => {
+      this.conectar()
+        .then(() => {
+          // Ejecutar la consulta
+          this.connection
+            .query("SELECT * FROM ??", [tabla])
+            .then(([resultados, campos]) => {
+              // Manejar los resultados de la consulta
+              if (resultados.length > 0) {
+                console.log("Se encontraron resultados");
+                resolve(resultados);
+              } else {
+                console.log("No se encontraron resultados");
+                resolve({ error: tabla });
+              }
+            })
+            .catch((error) => {
+              // Manejar el error
+              console.error(
+                "Error al intentar obtener la tabla de la base de datos",
+                error
+              );
+              reject(error);
+            });
+        })
+        .finally(() => {
+          this.desconectar();
+        });
+    });
+  },
+
   // Método para buscar en la base de datos
   buscarEnBaseDeDatos(tabla, columna, valor) {
     return new Promise((resolve, reject) => {
@@ -165,6 +198,54 @@ const DB = {
         });
     });
   },
+
+  //Método para modificar datos en la base de datos
+  modificarEnBaseDeDatos(tabla, datos, columnaFiltro, valorFiltro) {
+    return new Promise((resolve, reject) => {
+      this.conectar()
+        .then(() => {
+          //Ejecutar la consulta
+          this.connection
+            .query(`UPDATE ?? SET ? WHERE ?? = ?`, [tabla, datos, columnaFiltro, valorFiltro])
+            .then((resultados) => {
+              console.log("Datos modificados correctamente");
+              resolve(resultados);
+            })
+            .catch((error) => {
+              console.error("Error al modificar datos", error);
+              reject(error);
+            });
+        })
+        .finally(() => {
+          this.desconectar();
+        });
+    });
+  },
+
+  //Método para eliminar filas 
+
+  eliminarFilasEnBaseDeDatos(tabla, id) {
+    return new Promise((resolve, reject) => {
+      this.conectar()
+        .then(() => {
+          //Ejecutar la consulta
+          this.connection
+            .query(`DELETE FROM ?? WHERE ?? = ?`, [tabla, columna, id])
+            .then((resultados) => {
+              console.log("Datos eliminados correctamente");
+              resolve(resultados);
+            })
+            .catch((error) => {
+              console.log("Error al eliminar datos", error);
+              reject(error);
+            });
+        })
+        .finally(() => {
+          this.desconectar();
+        });
+    });
+  },
+
 };
 
 export default DB;

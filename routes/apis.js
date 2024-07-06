@@ -1,6 +1,5 @@
 "use strict";
 
-import DB from "../DB/db.js";
 import express from "express";
 import Juegos from "../modules/juegos.js";
 import Usuarios from "../modules/usuarios.js";
