@@ -96,6 +96,7 @@ const DB = {
               // Manejar los resultados de la consulta
               if (resultados.length === 1) {
                 console.log("Se enontró un resultado");
+                console.log(resultados);
                 resolve(resultados[0]);
               } else if (resultados.length > 1) {
                 console.log("Se encontraron múltiples resultados");

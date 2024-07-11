@@ -60,11 +60,11 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 insert into categoria (nombre, imagen) values
-('Estrategia', '../categorias/estrategia.png'),
-('Cartas', '../categorias/cartas.png'),
-('Cooperativos', '../categorias/cooperativos.png'),
-('Familiares', '../categorias/familiares.png'),
-('Clasicos', '../categorias/clasicos.png');
+('Estrategia', '../imagenes/categorias/estrategia.png'),
+('Cartas', '../imagenes/categorias/cartas.png'),
+('Cooperativos', '../imagenes/categorias/cooperativos.png'),
+('Familiares', '../imagenes/categorias/familiares.png'),
+('Clasicos', '../imagenes/categorias/clasicos.png');
 
 -- -----------------------------------------------------
 -- Table `ludoteca_db`.`juego`
@@ -79,33 +79,33 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 insert into juego (titulo, imagen, precio) values
-('Ajedrez', '../imagenes/Juegos/ajedrez.png', '15000'),
-('Aventura Z Lovecraft', '../imagenes/Juegos/aventura_z_lovecraft.png', '20000'),
-('Carcasonne','../imagenes/Juegos/carcassonne.png','26800'),
-('Catan', '../imagenes/Juegos/catan.png', '37500'),
-('Codigo Secreto', '../imagenes/Juegos/codigo_secreto.png', '10000'),
-('Codigo Secreto Duo', '../imagenes/Juegos/codigo_secreto_duo.png', '10000'),
-('Codigo Secreto Imagenes', '../imagenes/Juegos/codigo_secreto_imagenes.png', '11000'),
-('Damas', '../imagenes/Juegos/damas.png', '15000'),
-('Dixit', '../imagenes/Juegos/dixit.png', '21450'),
-('Domino', '../imagenes/Juegos/domino.png', '9700'),
-('El juego de la oca', '../imagenes/Juegos/el_juego_de_la_oca.png', '10500'),
-('Everdell', '../imagenes/Juegos/everdell.png', '34250'),
-('Gaia Project', '../imagenes/Juegos/gaia_project.png', '40000'),
-('H.D.P.', '../imagenes/Juegos/hdp.png', '12200'),
-('H.D.P. Dibujame', '../imagenes/Juegos/hdp_dibujame.png', '16800'),
-('H.D.P. Expansiones', '../imagenes/Juegos/hdp_expansiones.png', '8300'),
-('King of Tokyo', '../imagenes/Juegos/king_of_tokyo.png', '24500'),
-('Marvel Cards Game', '../imagenes/Juegos/marvel_cards_game.png', '41450'),
-('Pandemic', '../imagenes/Juegos/pandemic.png', '35000'),
-('Pocimas', '../imagenes/Juegos/pocimas.png', '28700'),
-('Praga', '../imagenes/Juegos/praga.png', '30500'),
-('Raids', '../imagenes/Juegos/raids.png', '1000'),
-('Santorini', '../imagenes/Juegos/santorini.png', '30500'),
-('Spirits Islands', '../imagenes/Juegos/spirits_islands.png', '36450'),
-('Terra Mystica', '../imagenes/Juegos/terra_mystica.png', '31000'),
-('Terraforming Mars', '../imagenes/Juegos/terraforming_mars.png', '31000'),
-('Through the Ages', '../imagenes/Juegos/through_the_ages.png', '33500');
+('Ajedrez', '../imagenes/juegos/ajedrez.png', '15000'),
+('Aventura Z Lovecraft', '../imagenes/juegos/aventura_z_lovecraft.png', '20000'),
+('Carcasonne','../imagenes/juegos/carcassonne.png','26800'),
+('Catan', '../imagenes/juegos/catan.png', '37500'),
+('Codigo Secreto', '../imagenes/juegos/codigo_secreto.png', '10000'),
+('Codigo Secreto Duo', '../imagenes/juegos/codigo_secreto_duo.png', '10000'),
+('Codigo Secreto Imagenes', '../imagenes/juegos/codigo_secreto_imagenes.png', '11000'),
+('Damas', '../imagenes/juegos/damas.png', '15000'),
+('Dixit', '../imagenes/juegos/dixit.png', '21450'),
+('Domino', '../imagenes/juegos/domino.png', '9700'),
+('El juego de la oca', '../imagenes/juegos/el_juego_de_la_oca.png', '10500'),
+('Everdell', '../imagenes/juegos/everdell.png', '34250'),
+('Gaia Project', '../imagenes/juegos/gaia_project.png', '40000'),
+('H.D.P.', '../imagenes/juegos/hdp.png', '12200'),
+('H.D.P. Dibujame', '../imagenes/juegos/hdp_dibujame.png', '16800'),
+('H.D.P. Expansiones', '../imagenes/juegos/hdp_expansiones.png', '8300'),
+('King of Tokyo', '../imagenes/juegos/king_of_tokyo.png', '24500'),
+('Marvel Cards Game', '../imagenes/juegos/marvel_cards_game.png', '41450'),
+('Pandemic', '../imagenes/juegos/pandemic.png', '35000'),
+('Pocimas', '../imagenes/juegos/pocimas.png', '28700'),
+('Praga', '../imagenes/juegos/praga.png', '30500'),
+('Raids', '../imagenes/juegos/raids.png', '1000'),
+('Santorini', '../imagenes/juegos/santorini.png', '30500'),
+('Spirits Islands', '../imagenes/juegos/spirits_islands.png', '36450'),
+('Terra Mystica', '../imagenes/juegos/terra_mystica.png', '31000'),
+('Terraforming Mars', '../imagenes/juegos/terraforming_mars.png', '31000'),
+('Through the Ages', '../imagenes/juegos/through_the_ages.png', '33500');
 
 -- -----------------------------------------------------
 -- Table `ludoteca_db`.`categoria_has_juego`

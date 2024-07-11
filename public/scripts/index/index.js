@@ -144,7 +144,7 @@ siguiente.addEventListener( 'click', () => {
 //                  CATEGORIAS
 //  Asignar imagen de fondo a cada categoría
 categorias.forEach( ( categoria, i ) => {
-    categorias[i].style.backgroundImage = `url(./imagenes/categorias/${categorias[i].querySelector( '.titulo' ).textContent.toLowerCase()}.png)`
+    categorias[i].style.backgroundImage = `url(./imagenes/categorias/${categorias[i].id}.png)`
     categorias[i].style.backgroundSize = 'cover'
     categorias[i].style.backgroundPosition = 'center'
     categorias[i].style.backgroundRepeat = 'no-repeat'

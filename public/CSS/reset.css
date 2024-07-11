@@ -310,6 +310,10 @@ header .desplegable.usuario-activo .sesion .boton:hover, header .desplegable.car
   cursor: pointer;
 }
 
+header .desplegable .sesion .session-on, header .desplegable .sesion .session-off {
+  display: none;
+}
+
 main {
   grid-area: main;
   display: flex;

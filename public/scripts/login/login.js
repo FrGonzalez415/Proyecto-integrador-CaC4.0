@@ -54,10 +54,15 @@ function validateLoginForm() {
       })
       .then( data => {
         // Manejar la respuesta exitosa
-        alert(
-          `¡Bienvenido ${data.usuario}! Se ha iniciado sesión correctamente.`
-        );
-        loginForm.reset();
+        if ( data.auth === "false" ) {
+          return alert( data.message );
+        } else {
+          localStorage.setItem("token", data.token);
+          alert(
+            `¡Bienvenido ${data.usuario}! Se ha iniciado sesión correctamente.`
+          );
+          loginForm.reset();
+        }
       })
       .catch(error => {
         // Manejar errores de la respuesta

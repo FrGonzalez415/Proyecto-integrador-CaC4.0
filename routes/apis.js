@@ -1,9 +1,12 @@
 "use strict";
 
 import express from "express";
-import Juegos from "../modules/juegos.js";
+import Auth from "../controllers/authController.js";
+import Categorias from "../modules/categorias.js";
 import Usuarios from "../modules/usuarios.js";
 import Pedidos from "../modules/pedidos.js";
+import Juegos from "../modules/juegos.js";
+import AuthMiddleware from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
@@ -15,7 +18,13 @@ router.post("/registro", (req, res) => {
   // Se registra el nuevo usuario
   Usuarios.registrarUsuario(req.body)
   .then((registro) => {
-  res.status(201).json({ estado: "Usuario registrado", usuario: registro.usuario });
+    Auth.generarToken({ idusuario: registro.idusuario })
+      .then((token) => {
+        res.status(201).json({ auth: "true", token: token, estado: "Usuario registrado", usuario: registro.usuario });
+      })
+      .catch((error) => {
+        res.status(500).json({ error: "Usuario registrado, error al generar token" });
+      });
     })
     .catch((error) => {
         let statusCode
@@ -40,9 +49,15 @@ router.post("/login", (req, res) => {
     .then((validacion) => {
       if (validacion.error === undefined) {
         // Si no hay errores, se envía un estado 200 y un mensaje de éxito
-        res
-          .status(200)
-          .json({ estado: "Login successful", usuario: validacion.usuario });
+        console.log(validacion);
+        Auth.generarToken({ idusuario: validacion.idusuario })
+          .then((token) => {
+            console.log(token);
+            res.status(200).json({ auth: "true", token: token, estado: "Login successful", usuario: validacion.usuario });
+          })
+          .catch((error) => {
+            res.status(500).json({ error: "Error al generar token" });
+          });
       } else if (validacion.error === "email") {
         // Si el error es por email, se envía un estado 401 y un mensaje de error
         error.statusCode = 401;
@@ -55,7 +70,7 @@ router.post("/login", (req, res) => {
         throw error;
       }
     })
-    .catch((error) => {
+    .catch((err) => {
       // Si hay un error, se envía un estado y un mensaje de error
       res.status(err.statusCode).json({ error: err.message });
     });
@@ -69,6 +84,28 @@ router.get("/productos", (req, res) => {
     })
     .catch((error) => {
       res.status(500).json({ error: error });
+    });
+});
+
+// Ruta para obtener las categorías
+router.get("/categorias", (req, res) => {
+  Categorias.obtenerCategorias()
+    .then((result) => {
+      res.status(200).json(result);
+    })
+    .catch((error) => {
+      res.status(500).json({ error: error });
+    });
+});
+
+// Ruta para validar un token
+router.post("/verificarToken", AuthMiddleware, (req, res) => {
+  Auth.generarToken({ idusuario: req.idusuario })
+    .then((token) => {
+      res.status(200).json({ auth: "true", token: token, message: "Token válido" });
+    })
+    .catch((error) => {
+      res.status(500).json({ auth: "false", error: "Error al generar token" });
     });
 });
 
