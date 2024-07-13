@@ -5,20 +5,20 @@
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
-const loginForm = document.getElementById("form-is");
+const eliminarForm = document.getElementById("form-eliminar");
+const sesionActiva = document.querySelector("main .sesion-activa");
+const sesionInactiva = document.querySelector("main .sesion-inactiva");
 
 //                  IMPORTS
 import navBar from "../modulos/menu.js";
 
 //                  FUNCIONES
 //  Validación del formulario
-function validateLoginForm() {
-
+function validateEliminarForm() {
   //                  VARIABLES
   //  Se obtienen los elementos del formulario provenientes del DOM
-  const email = document.getElementById("email-is").value.trim();
-  const password = document.getElementById("password-is").value.trim();
-
+  const email = document.getElementById("email-eliminar").value.trim();
+  const password = document.getElementById("password-eliminar").value.trim();
   //  Se inicializa la variable valid en true
   let valid = true;
 
@@ -36,64 +36,92 @@ function validateLoginForm() {
 
   // Si todos los campos son válidos, se envía el formulario y se resetea
   if (valid) {
-
-    const loginBody = {
+    const credenciales = {
       email: email,
       password: password,
     };
-
     // Enviar los datos utilizando fetch con el método POST
-    fetch("/api/login", {
-      method: "POST",
+    fetch("/api/eliminar-usuario", {
+      method: "DELETE",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify(loginBody),
+      body: JSON.stringify(credenciales),
     })
       .then( response => {
         if (!response.ok) {
-
           // Manejar errores de la respuesta
           return response.json().then(error => Promise.reject(error));
-
         } else return response.json();
-        
       })
       .then( data => {
-
         // Manejar la respuesta exitosa
-        if ( data.auth === "false" ) {
+        localStorage.removeItem("token");
 
-          return alert( data.message );
+        alert(
+          `¡Usuario eliminado correctamente!`
+        );
 
-        } else if ( data.auth === "true" ){
-
-          localStorage.setItem("token", data.token);
-
-          alert(
-            `¡Bienvenido ${data.usuario}! Se ha iniciado sesión correctamente.`
-          );
-
-          window.location.href = "/";
-        }
+        window.location.href = "/";
       })
       .catch(error => {
         // Manejar errores de la respuesta
         alert(`Error: ${error.error}`);
-        loginForm.reset();
+        eliminarForm.reset();
         });
   }
 }
+
+
+const iniciarSesion = (token) => {
+  localStorage.setItem("token", token);
+  sesionActiva.style.display = "flex";
+  sesionInactiva.style.display = "none";
+};
+
+const cerrarSesion = () => {
+  localStorage.removeItem("token");
+  sesionActiva.style.display = "none";
+  sesionInactiva.style.display = "flex";
+};
+
+const validarSesion = (token) => {
+  fetch("/api/verificar-token", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.auth === true) {
+        iniciarSesion(data.token);
+      } else if (data.auth === false) {
+        console.log(data.message);
+        cerrarSesion();
+      }
+    })
+    .catch((error) => console.log(error));
+};
 
 //                  NAVBAR
 //  se cargan las funcionalidades de la barra de navegación
 navBar();
 
 document.addEventListener("DOMContentLoaded", function () {
-  loginForm.addEventListener("submit", function (event) {
+  eliminarForm.addEventListener("submit", function (event) {
     //                  EVENTOS
     //  Validación del formulario de inicio de sesión
     event.preventDefault();
-    validateLoginForm();
+    validateEliminarForm();
   });
+
+  //  Se verifica que haya una sesion activa
+  if (localStorage.getItem("token") !== null) {
+    validarSesion(localStorage.getItem("token"));
+  } else {
+    cerrarSesion();
+  }
+
 });

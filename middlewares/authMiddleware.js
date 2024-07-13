@@ -15,10 +15,9 @@ const AuthMiddleware = (req, res, next) => {
       .status(401)
       .json({ auth: "false", message: "formato del token erroneo" });
   }
-  console.log(token);
   Auth.verificarToken(token)
     .then((decoded) => {
-      req.idusuario = decoded;
+      req.idusuario = decoded.idusuario;
       next();
     })
     .catch((error) => {

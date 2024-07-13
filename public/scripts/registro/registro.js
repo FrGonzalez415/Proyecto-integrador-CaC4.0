@@ -126,8 +126,12 @@ if (!nameRegex.test(surname) || surname.length < 4) {
         return response.json();
       })
       .then( data => {
+        
+        localStorage.setItem("token", data.token);
+        
         alert(`${data.usuario}, te has registrado con éxito`);
-        console.log(data);
+
+        window.location.href = "/";
       })
       .catch((error) => {
         alert(`${error.error}`);

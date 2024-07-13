@@ -9,7 +9,15 @@ const Codificador = {
     },
     // Método para comparar una contraseña con su hash
     compararPassword(password, hash) {
-        return bcrypt.compare(password, hash)
+        return new Promise((resolve, reject) => {
+            bcrypt.compare(password, hash, (error, result) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(result);
+                }
+            });
+        });
     }
 }
 

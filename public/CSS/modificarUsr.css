@@ -1,0 +1,14 @@
+@import url(./reset.css);
+
+main .sesion-activa, main .sesion-inactiva {
+    display: none;
+}
+
+.btn-modif-usuario{
+    display: flex;
+    flex-direction: row;
+}
+
+main .sesion-activa .eliminar-usuario {
+    background-color: var(--color-terciario);
+}

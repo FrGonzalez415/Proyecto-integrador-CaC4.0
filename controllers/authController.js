@@ -6,7 +6,6 @@ import config from "../config/config.js";
 const Auth = {
   // Método para generar un token
   generarToken(payload) {
-    console.log( payload);
     return new Promise((resolve, reject) => {
       jwt.sign(
         payload,

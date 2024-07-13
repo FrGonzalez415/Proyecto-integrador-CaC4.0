@@ -4,6 +4,7 @@ import express from 'express'
 import path from 'path';
 import { fileURLToPath } from 'url';
 import apis from './apis.js'
+import AuthMiddleware from '../middlewares/authMiddleware.js';
 
 // Construir __dirname basado en import.meta.url
 const __dirname = path.dirname( fileURLToPath(import.meta.url) )
@@ -55,6 +56,16 @@ router.get('/registro', (req, res) => {
 
 //                                  LOGIN 
 router.get('/login', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url.toLowerCase() + '.html'))
+})
+
+//                                  MODIFICAR DATOS
+router.get('/modificar-datos', (req, res) => {
+    res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url.toLowerCase() + '.html'))
+})
+
+//                                  ELIMINAR USUARIO
+router.get('/eliminar-usuario', (req, res) => {
     res.type('html').sendFile(path.join(__dirname, '..', 'public', 'HTML', req.url.toLowerCase() + '.html'))
 })
 

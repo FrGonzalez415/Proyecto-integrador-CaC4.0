@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <link rel="stylesheet" href="../CSS/construccion.css" >
     <link rel="icon" href="../imagenes/logo.ico" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      type="text/css"
+      media="all"
+      href="../CSS/iniciarsesion.css"
     >
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
     <link
@@ -94,16 +92,31 @@
     </header>
 
     <main>
-      <div class="construccion">
-        <img
-          class="imagen"
-          src="../imagenes/construccion2.png"
-          alt="Sitio en construcción"
-        >
-        <div class="texto">
-          <p>¡Estamos subiendo de nivel para vos!</p>
-          <p>¡Nos vemos pronto!</p>
-        </div>
+        <form class="formulario sesion-activa" id="form-eliminar">
+          <h1 class="titulo">Eliminar Usuario</h1>
+  
+          <input
+            class="input-is"
+            type="email"
+            name="email"
+            id="email-eliminar"
+            placeholder="Email"
+          >
+  
+          <input
+            class="input-is"
+            type="password"
+            name="password"
+            id="password-eliminar"
+            placeholder="Contraseña"
+          >
+  
+          <button class="submit" type="submit">Eliminar Usuario</button>
+        </form>
+      
+      <div class="sesion-inactiva">
+        <h1 class="titulo">Inicia Sesión para eliminar tu cuenta</h1>
+        <a href="/login" class="boton">Iniciar Sesión</a>
       </div>
     </main>
 
@@ -163,5 +176,7 @@
         <p>Todos los derechos reservados</p>
       </div>
     </footer>
+
+    <script type="module" src="../scripts/eliminarUsuario/eliminarUsuario.js"></script>
   </body>
 </html>

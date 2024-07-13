@@ -16,9 +16,14 @@ const Usuarios = {
                   email: nuevoUsuario.email,
                   password: password,
                 };
+
                 DB.insertarEnBaseDeDatos("usuario", credencialesUsuario)
                   .then(([result]) => {
-                    DB.buscarEnBaseDeDatos("usuario", "email", nuevoUsuario.email)
+                    DB.buscarEnBaseDeDatos(
+                      "usuario",
+                      "email",
+                      nuevoUsuario.email
+                    )
                       .then((usuario) => {
                         let datosUsuario = {
                           nombre: nuevoUsuario.nombre,
@@ -34,11 +39,12 @@ const Usuarios = {
                           vivienda: nuevoUsuario.vivienda,
                           idusuario: usuario.idusuario,
                         };
+
                         DB.insertarEnBaseDeDatos("datos_usuario", datosUsuario)
                           .then(([result]) => {
                             resolve({
                               idusuario: usuario.idusuario,
-                              nombre: nuevoUsuario.nombre,
+                              usuario: nuevoUsuario.nombre,
                             });
                           })
                           .catch((error) => {
@@ -48,6 +54,7 @@ const Usuarios = {
                       })
                       .catch((error) => {
                         console.log("El error es el siguiente: ", error);
+                        reject(error);
                       });
                   })
                   .catch((error) => {
@@ -60,49 +67,7 @@ const Usuarios = {
                 reject(error);
               });
           } else {
-            reject({ error: "email" });
-          }
-        })
-        .catch((error) => {
-          reject(error);
-        });
-    });
-  },
-
-  // Método para modificar un usuario REVISAR
-  modificarUsuario(usuarioModificado) {
-    return new Promise((resolve, reject) => {
-      DB.buscarEnBaseDeDatos("usuario", "email", usuarioModificado.email)
-        .then((usuario) => {
-          if (usuario.error === "email") {
-            reject({ error: "usuario no encontrado" });
-          } else {
-            let datosUsuario = {
-              nombre: usuarioModificado.nombre,
-              apellido: usuarioModificado.apellido,
-              telefono: usuarioModificado.telefono,
-              fechaNacimiento: usuarioModificado.fechaNacimiento,
-              pais: usuarioModificado.pais,
-              provincia: usuarioModificado.provincia,
-              ciudad: usuarioModificado.ciudad,
-              codigoPostal: usuarioModificado.codigoPostal,
-              calle: usuarioModificado.calle,
-              numero: usuarioModificado.numero,
-              vivienda: usuarioModificado.vivienda,
-            };
-            DB.modificarEnBaseDeDatos(
-              "datos_usuario",
-              datosUsuario,
-              "idusuario",
-              usuario.idusuario
-            )
-              .then(([result]) => {
-                resolve({ mensaje: "Datos actualizados correctamente" });
-              })
-              .catch((error) => {
-                console.log("El error es el siguiente: ", error);
-                reject(error);
-              });
+            resolve({ error: "email" });
           }
         })
         .catch((error) => {
@@ -112,8 +77,67 @@ const Usuarios = {
     });
   },
 
+  // Método para modificar un usuario REVISAR
+  modificarUsuario(usuarioModificado, idusuario) {
+    return new Promise((resolve, reject) => {
+      console.log(usuarioModificado);
+      console.log(idusuario);
+
+      DB.modificarEnBaseDeDatos(
+        "datos_usuario",
+        usuarioModificado,
+        "idusuario",
+        idusuario
+      )
+        .then(([result]) => {
+          resolve({ mensaje: "Datos actualizados correctamente" });
+        })
+        .catch((error) => {
+          console.log("El error es el siguiente: ", error);
+          reject(error);
+        });
+    });
+  },
+
   // Método para eliminar un usuario
-  eliminarUsuario(id) {},
+  eliminarUsuario(id, email, password) {
+    return new Promise((resolve, reject) => {
+      DB.buscarEnBaseDeDatos("usuario", "idusuario", id).then((usuario) => {
+        if (usuario.error === "id") {
+          resolve({ error: "id" });
+        } else if (usuario.email !== email) {
+          resolve({ error: "email" });
+        } else {
+          Codificador.compararPassword(password, usuario.password).then(
+            (validacion) => {
+              if (validacion) {
+                DB.eliminarEnBaseDeDatos("datos_usuario", "idusuario", id)
+                  .then(([result]) => {
+                    DB.eliminarEnBaseDeDatos("usuario", "idusuario", id)
+                      .then(([result]) => {
+                        resolve({
+                          usuario: id,
+                          mensaje: "Usuario eliminado correctamente",
+                        });
+                      })
+                      .catch((error) => {
+                        console.log("El error es el siguiente: ", error);
+                        reject(error);
+                      });
+                  })
+                  .catch((error) => {
+                    console.log("El error es el siguiente: ", error);
+                    reject(error);
+                  });
+              } else {
+                resolve({ error: "contraseña" });
+              }
+            }
+          );
+        }
+      });
+    });
+  },
 
   // Método para validar las credenciales de un usuario
   validarCredenciales(email, contraseña) {
@@ -121,26 +145,39 @@ const Usuarios = {
       DB.buscarEnBaseDeDatos("usuario", "email", email)
         .then((credenciales) => {
           if (credenciales.error === "email") {
-            reject({ error: "email" });
-          } else if ( Codificador.compararPassword(contraseña, credenciales.password) ) {
-            DB.buscarEnBaseDeDatos(
-              "datos_usuario",
-              "idusuario",
-              credenciales.idusuario
-            )
-              .then((usuario) => {
-                if (usuario.error === undefined) {
-                  resolve({ idusuario: usuario.idusuario ,usuario: usuario.nombre });
+            resolve({ error: "email" });
+          } else {
+            Codificador.compararPassword(contraseña, credenciales.password)
+              .then((validacion) => {
+                if (validacion) {
+                  DB.buscarEnBaseDeDatos(
+                    "datos_usuario",
+                    "idusuario",
+                    credenciales.idusuario
+                  )
+                    .then((usuario) => {
+                      if (usuario.error === undefined) {
+                        resolve({
+                          idusuario: usuario.idusuario,
+                          usuario: usuario.nombre,
+                        });
+                      } else {
+                        reject({ error: usuario.error });
+                      }
+                    })
+                    .catch((error) => {
+                      console.log("El error es el siguiente: ", error);
+                      reject(error);
+                    });
                 } else {
-                  reject({ error: usuario.error });
+                  console.log("Contraseña incorrecta");
+                  resolve({ error: "contraseña" });
                 }
               })
               .catch((error) => {
                 console.log("El error es el siguiente: ", error);
                 reject(error);
               });
-          } else {
-            reject({ error: "contraseña" });
           }
         })
         .catch((error) => {

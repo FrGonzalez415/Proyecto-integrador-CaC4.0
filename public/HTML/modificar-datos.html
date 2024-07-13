@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <link rel="stylesheet" href="../CSS/construccion.css" >
-    <link rel="icon" href="../imagenes/logo.ico" >
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    >
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../imagenes/logo.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap"
       rel="stylesheet"
-    >
-    <link rel="preconnect" href="https://fonts.googleapis.com" >
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Nova+Mono&display=swap"
       rel="stylesheet"
-    >
+    />
+    <link rel="stylesheet" href="../CSS/registro.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="../CSS/modificarUsr.css"
+    />
     <title>Ludoteca</title>
   </head>
 
@@ -94,17 +93,124 @@
     </header>
 
     <main>
-      <div class="construccion">
-        <img
-          class="imagen"
-          src="../imagenes/construccion2.png"
-          alt="Sitio en construcción"
-        >
-        <div class="texto">
-          <p>¡Estamos subiendo de nivel para vos!</p>
-          <p>¡Nos vemos pronto!</p>
-        </div>
+        <form class="formulario sesion-activa" id="form-modif-usuario">
+          <h1 class="titulo">Modificar Datos</h1>
+  
+          <input
+            class="input-reg"
+            type="text"
+            name="name"
+            id="name-modif"
+            placeholder="Nombre"
+          />
+  
+          <input
+            class="input-reg"
+            type="text"
+            name="surname"
+            id="surname-modif"
+            placeholder="Apellido"
+          />
+  
+          <input
+            class="input-reg"
+            type="text"
+            name="cellphone"
+            id="cellphone-modif"
+            placeholder="Número de teléfono"
+          />
+  
+          <input
+            class="input-reg"
+            type="date"
+            name="birthdate"
+            id="birthdate-modif"
+          />
+  
+          <select class="input-reg" name="country" id="country-modif">
+            <option value="">Selecciona un país</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Chile">Chile</option>
+            <option value="Mexico">México</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Otro">Otro</option>
+          </select>
+  
+          <input
+            class="input-reg"
+            type="text"
+            name="province"
+            id="province-modif"
+            placeholder="Provincia"
+          />
+  
+          <input
+            class="input-reg"
+            type="text"
+            name="city"
+            id="city-modif"
+            placeholder="Ciudad"
+          />
+  
+          <input
+            class="input-reg"
+            type="text"
+            name="zip"
+            id="zip-modif"
+            placeholder="Código postal"
+          />
+  
+          <input
+            class="input-reg"
+            type="text"
+            name="street"
+            id="street-modif"
+            placeholder="Calle"
+          />
+  
+          <input
+            class="input-reg"
+            type="text"
+            name="number"
+            id="number-modif"
+            placeholder="Número"
+          />
+  
+          <div class="fila">
+            <label for="option-reg">Casa</label>
+            <input
+              class="input-reg"
+              type="radio"
+              name="option"
+              id="option-modif"
+              value="1"
+            />
+            <label for="option2-reg">Departamento</label>
+            <input
+              class="input-reg"
+              type="radio"
+              name="option"
+              id="option2-modif"
+              value="2"
+            />
+          </div>
+  
+          <div class="btn-modif-usuario">
+            <input class="submit" type="submit" value="Modificar Datos" />
+            <a class="submit eliminar-usuario" href="/Eliminar-usuario"
+              >Eliminar Usuario</a
+            >
+        </form>
       </div>
+
+      <div class="sesion-inactiva">
+        <h1 class="titulo">Inicia sesión para modificar tus datos</h1>
+        <a href="/login" class="boton">Iniciar Sesión</a>
+      </div>
+
     </main>
 
     <aside></aside>
@@ -163,5 +269,7 @@
         <p>Todos los derechos reservados</p>
       </div>
     </footer>
+
+    <script type="module" src="../scripts/modificarUsr/modificarUsr.js"></script>
   </body>
 </html>

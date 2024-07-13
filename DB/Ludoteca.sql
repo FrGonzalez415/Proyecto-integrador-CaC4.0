@@ -16,7 +16,7 @@ USE `ludoteca_db` ;
 CREATE TABLE IF NOT EXISTS `ludoteca_db`.`usuario` (
   `idusuario` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idusuario`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
 ENGINE = InnoDB

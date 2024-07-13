@@ -225,7 +225,7 @@ const DB = {
 
   //Método para eliminar filas 
 
-  eliminarFilasEnBaseDeDatos(tabla, id) {
+  eliminarEnBaseDeDatos(tabla, columna, id) {
     return new Promise((resolve, reject) => {
       this.conectar()
         .then(() => {
