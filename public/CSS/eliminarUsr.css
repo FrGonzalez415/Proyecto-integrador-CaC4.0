@@ -1,5 +1,48 @@
 @import url(./reset.css);
+@import url(./iniciarsesion.css);
 
-main .sesion-activa, main .sesion-inactiva {
-    display: none;
+main .sesion-activa,
+main .sesion-inactiva {
+  display: none;
+}
+
+main .sesion-inactiva {
+  width: auto;
+  height: auto;
+  flex-flow: column nowrap;
+  justify-content:center;
+  align-items: center;
+  border-radius: 10px;
+  border: solid;
+  border-color: var(--color-terciario);
+  text-align: center;
+  padding: 2.5em;
+}
+
+main .sesion-inactiva .titulo {
+  color: var(--color-terciario);
+  font-size: 1.5em;
+  width: auto;
+  /* flex-wrap: wrap; */
+  text-align: center;
+  line-height: 1.5em;
+  /* margin: 3.5em 0 0 0; */
+}
+
+main .sesion-inactiva .submit {
+  background-color: var(--color-primario);
+  color: var(--color-terciario);
+  border: none;
+  border-radius: 5px;
+  margin: 1.5em;
+  padding: 10px 0;
+  cursor: pointer;
+  text-align: center;
+  width: 50%;
+  
+}
+
+main .sesion-inactiva .submit:hover {
+  background-color: var(--color-selector);
+  color: var(--color-primario);
 }

@@ -121,7 +121,6 @@ function validateModifUsuarioForm() {
       })
       .then(data => {
         alert(`Los datos fueron modificados con éxito`);
-        console.log(data);
       })
       .catch((error) => {
         alert(`${error.error}`);
@@ -164,6 +163,46 @@ const validarSesion = (token) => {
 //                  EVENTOS
 //  Validación del formulario de registro
 document.addEventListener("DOMContentLoaded", function () {
+
+  fetch("/api/datos-usuario", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  }
+  )
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then((error) => {
+          console.log(error.message);
+          Promise.reject(error)
+        });
+      }
+      return response.json();
+    })
+    .then(data => {
+      document.getElementById("name-modif").value = data.nombre;
+      document.getElementById("surname-modif").value = data.apellido;
+      document.getElementById("cellphone-modif").value = data.telefono;
+      document.getElementById("birthdate-modif").value = data.fechaNacimiento;
+      document.getElementById("country-modif").value = data.pais;
+      document.getElementById("province-modif").value = data.provincia;
+      document.getElementById("city-modif").value = data.ciudad;
+      document.getElementById("zip-modif").value = data.codigoPostal;
+      document.getElementById("street-modif").value = data.calle;
+      document.getElementById("number-modif").value = data.numero;
+      if (data.vivienda === "Casa") {
+        document.getElementById("option-modif").checked = true;
+      } else if (data.vivienda === "Departamento") {
+        document.getElementById("option2-modif").checked = true;
+      }
+    })
+    .catch(error => {
+      console.log(error);
+    });
+
+
   modifUsuarioForm.addEventListener("submit", function (event) {
     event.preventDefault();
     validateModifUsuarioForm();

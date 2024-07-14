@@ -1,10 +1,11 @@
-@import url(./reset.css);
+ @import url(../CSS/reset.css); 
 
 main{
     justify-content: flex-start;
 }
+
 .titulo-principal{
-  
+  margin-top: 1rem;
 
 }
 
@@ -14,17 +15,23 @@ main{
     gap: 1.5rem;
 }
 .carrito-vacio{
-    display: none;
+    margin: 2rem 0 1rem 0;
+
+}
+
+.icono-car{
+    margin-left: 10px;
 }
 
 .carrito-comprado{
-    display: none;
+    margin: 2rem 0 1rem 0;
 }
 
 .carrito-productos{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    color:navy;
 }
 
 .carrito-producto{
@@ -34,7 +41,7 @@ main{
     background-color: var(--color-terciario);
     border-radius: 1rem;
     padding: 0.5rem;
-    width: 100%;
+    width: 70vw;
 }
 
 .carrito-producto-imagen{
@@ -51,8 +58,10 @@ main{
     background-color: transparent;
     color: red;
     padding-left: 2.5rem;
+    padding-right: 1rem;
     cursor: pointer;
 }
+
 
 .carrito-acciones{
     display: flex;
@@ -61,40 +70,54 @@ main{
 
 .carrito-acciones-vaciar{
     border: 0;
-    background-color: var(--color-header);
+    background-color: navy;
     border-radius: 1rem;
     padding: 0.8rem;
     text-transform: uppercase;
     cursor: pointer;
+    margin-right: 2rem;
+    font-weight: bold;
+}
+
+.carrito-acciones-vaciar:hover, .carrito-acciones-comprar:hover{
+    background-color: var(--color-selector);
+    color: var(--color-primario);
 }
 
 .carrito-acciones-derecha{
     display: flex;
-
 }
 
 .carrito-acciones-total{
     display: flex;
-    background-color: var(--color-header);
+    background-color: navy;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     padding: 0.8rem;
     text-transform: uppercase;
     gap: 1rem;
+    font-weight: bold;
 }
 
 
 .carrito-acciones-comprar{
     border: 0;
     background-color: var(--color-primario);
-    color: var(--color-header);
+    color: navy;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     padding: 0.8rem;
     text-transform: uppercase;
     cursor: pointer;
+    font-weight: bold;
 }
 
-.disabled{
-    display: none;
+.btn-volver{
+    margin-top: 1rem;
+    color: navy;
+    font-size: 1rem;
+}
+
+.txt-volver{
+   padding: 0.5rem;
 }

@@ -3,6 +3,16 @@
 import DB from "../DB/db.js";
 import Codificador from "../controllers/codificador.js";
 
+//                    FUNCIONES
+//  Método para formatear la fecha
+function formatearFecha(fechaISO) {
+  const fecha = new Date(fechaISO);
+  const año = fecha.getFullYear();
+  const mes = String(fecha.getMonth() + 1).padStart(2, '0'); // Los meses son indexados desde 0
+  const dia = String(fecha.getDate()).padStart(2, '0');
+  return `${año}-${mes}-${dia}`;
+}
+
 const Usuarios = {
   // Método para registrar un nuevo usuario
   registrarUsuario(nuevoUsuario) {
@@ -80,8 +90,6 @@ const Usuarios = {
   // Método para modificar un usuario REVISAR
   modificarUsuario(usuarioModificado, idusuario) {
     return new Promise((resolve, reject) => {
-      console.log(usuarioModificado);
-      console.log(idusuario);
 
       DB.modificarEnBaseDeDatos(
         "datos_usuario",
@@ -195,6 +203,7 @@ const Usuarios = {
           if (usuario.error === "id") {
             reject({ error: "usuario no encontrado" });
           } else {
+            usuario.fechaNacimiento = formatearFecha(usuario.fechaNacimiento);
             resolve(usuario);
           }
         })

@@ -1,2 +1,20 @@
 @import url(./reset.css);
 @import url(./construccion.css);
+
+.titulo-term{
+font-size: 1.2rem;
+font-family: var(--tipo-principal);
+color: var(--color-header);
+margin: 0.5rem 0.3rem;
+
+}
+
+.parrafo-term{
+font-size: 0.9rem;
+font-family: var(--tipo-secundario);
+color: var(--color-header);
+text-align: justify;
+margin: 0 0.3rem;
+width: 97%;
+}
+
