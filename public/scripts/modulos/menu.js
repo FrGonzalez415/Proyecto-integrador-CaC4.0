@@ -54,7 +54,15 @@ const validarSesion = (token) => {
       Authorization: `Bearer ${token}`,
     },
   })
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        return res.json().then((error) => {
+          cerrarSesion();
+          Promise.reject(error);
+        });
+      }
+      return res.json();
+    })
     .then((data) => {
       if (data.auth === true) {
         iniciarSesion(data.token);
@@ -63,7 +71,7 @@ const validarSesion = (token) => {
         cerrarSesion();
       }
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error))
 };
 
 //                  EVENTOS

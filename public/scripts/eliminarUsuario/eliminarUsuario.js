@@ -49,30 +49,27 @@ function validateEliminarForm() {
       },
       body: JSON.stringify(credenciales),
     })
-      .then( response => {
+      .then((response) => {
         if (!response.ok) {
           // Manejar errores de la respuesta
-          return response.json().then(error => Promise.reject(error));
+          return response.json().then((error) => Promise.reject(error));
         } else return response.json();
       })
-      .then( data => {
+      .then((data) => {
         // Manejar la respuesta exitosa
         localStorage.removeItem("token");
 
-        alert(
-          `¡Usuario eliminado correctamente!`
-        );
+        alert(`¡Usuario eliminado correctamente!`);
 
         window.location.href = "/";
       })
-      .catch(error => {
+      .catch((error) => {
         // Manejar errores de la respuesta
         alert(`Error: ${error.error}`);
         eliminarForm.reset();
-        });
+      });
   }
 }
-
 
 const iniciarSesion = (token) => {
   localStorage.setItem("token", token);
@@ -91,9 +88,17 @@ const validarSesion = (token) => {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
-    }
+    },
   })
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        return res.json().then((error) => {
+          cerrarSesion();
+          Promise.reject(error);
+        });
+      }
+      return res.json();
+    })
     .then((data) => {
       if (data.auth === true) {
         iniciarSesion(data.token);
@@ -123,5 +128,4 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     cerrarSesion();
   }
-
 });

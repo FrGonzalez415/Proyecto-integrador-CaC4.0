@@ -40,7 +40,7 @@ function validateModifUsuarioForm() {
   const optionCasa = document.getElementById("option-modif").checked;
   const optionDepto = document.getElementById("option2-modif").checked;
   const vivienda = optionCasa ? "Casa" : optionDepto ? "Departamento" : "";
-  
+
   //  Se validan los campos del formulario
   if (!nameRegex.test(name) || name.length < 5) {
     valid = false;
@@ -59,7 +59,7 @@ function validateModifUsuarioForm() {
     valid = false;
     alert("Ingrese una fecha de cumpleaños válida");
   }
-  if (country == '') {
+  if (country == "") {
     valid = false;
     alert("Ingrese un país válido");
   }
@@ -107,19 +107,19 @@ function validateModifUsuarioForm() {
         codigoPostal: zip,
         calle: street,
         numero: number,
-        vivienda: vivienda
+        vivienda: vivienda,
       }),
     })
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           return response.json().then((error) => {
             console.log(error);
-            Promise.reject(error)
+            Promise.reject(error);
           });
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         alert(`Los datos fueron modificados con éxito`);
       })
       .catch((error) => {
@@ -138,7 +138,7 @@ const iniciarSesion = (token) => {
 const cerrarSesion = () => {
   localStorage.removeItem("token");
   sesionActiva.style.display = "none";
-  sesionInactiva.style.display = "block";
+  sesionInactiva.style.display = "flex";
 };
 
 const validarSesion = (token) => {
@@ -146,8 +146,17 @@ const validarSesion = (token) => {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
-    }
+    },
   })
+    .then((res) => {
+      if (!res.ok) {
+        return res.json().then((error) => {
+          cerrarSesion();
+          Promise.reject(error);
+        });
+      }
+      return res.json();
+    })
     .then((res) => res.json())
     .then((data) => {
       if (data.auth === true) {
@@ -163,25 +172,23 @@ const validarSesion = (token) => {
 //                  EVENTOS
 //  Validación del formulario de registro
 document.addEventListener("DOMContentLoaded", function () {
-
   fetch("/api/datos-usuario", {
     method: "GET",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
-  }
-  )
-    .then(response => {
+  })
+    .then((response) => {
       if (!response.ok) {
         return response.json().then((error) => {
           console.log(error.message);
-          Promise.reject(error)
+          Promise.reject(error);
         });
       }
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
       document.getElementById("name-modif").value = data.nombre;
       document.getElementById("surname-modif").value = data.apellido;
       document.getElementById("cellphone-modif").value = data.telefono;
@@ -198,10 +205,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("option2-modif").checked = true;
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
     });
-
 
   modifUsuarioForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -214,5 +220,4 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     cerrarSesion();
   }
-
 });
